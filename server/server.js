@@ -25,12 +25,47 @@ const PORT = process.env.PORT || 5000;
 |--------------------------------------------------------------------------
 | CORS
 |--------------------------------------------------------------------------
+|
+| Allow:
+| - Local Vite development
+| - Production Vercel frontend
+|
+|--------------------------------------------------------------------------
 */
+
+const allowedOrigins = [
+  "http://localhost:5173",
+  "http://localhost:5174",
+  "https://jni-tours.vercel.app",
+];
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: (origin, callback) => {
+      /*
+       * Allow requests without an Origin header.
+       * Useful for server-to-server requests, health checks,
+       * and certain development tools.
+       */
+      if (!origin) {
+        return callback(null, true);
+      }
+
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+
+      console.warn(
+        `CORS blocked request from origin: ${origin}`
+      );
+
+      return callback(
+        new Error("Not allowed by CORS")
+      );
+    },
+
     credentials: true,
+
     methods: [
       "GET",
       "POST",
@@ -39,6 +74,7 @@ app.use(
       "DELETE",
       "OPTIONS",
     ],
+
     allowedHeaders: [
       "Content-Type",
       "Authorization",
@@ -78,8 +114,6 @@ app.use(
  *
  * GET /api/tours
  * GET /api/tours/:slug
- *
- * Only published tours are returned.
  */
 
 app.use(
@@ -92,14 +126,7 @@ app.use(
  *
  * GET /api/destinations
  * GET /api/destinations/:slug
- *
- * These are the destinations created by administrators.
- *
- * The frontend also keeps its hardcoded destinations,
- * so database failure will not remove the default
- * destinations from the public website.
  */
-
 
 app.use(
   "/api/destinations",
@@ -112,7 +139,6 @@ app.use(
  * GET  /api/bookings
  * POST /api/bookings
  * GET  /api/bookings/:bookingId
- * etc.
  */
 
 app.use(
@@ -121,14 +147,20 @@ app.use(
 );
 
 /*
- * Protected administrator API
+|--------------------------------------------------------------------------
+| ADMIN API
+|--------------------------------------------------------------------------
+*/
+
+/*
+ * Main administrator routes
  *
- * GET   /api/admin/stats
+ * GET /api/admin/stats
  *
  * TOURS
- * GET   /api/admin/tours
- * POST  /api/admin/tours
- * PUT   /api/admin/tours/:id
+ * GET    /api/admin/tours
+ * POST   /api/admin/tours
+ * PUT    /api/admin/tours/:id
  * DELETE /api/admin/tours/:id
  *
  * BOOKINGS
@@ -136,11 +168,6 @@ app.use(
  * GET   /api/admin/bookings/:bookingId
  * PATCH /api/admin/bookings/:bookingId/status
  * PATCH /api/admin/bookings/:bookingId/payment
- *
- * CUSTOMERS
- * GET   /api/admin/customers
- * GET   /api/admin/customers/:id
- * PATCH /api/admin/customers/:id/status
  *
  * DESTINATIONS
  * GET    /api/admin/destinations
@@ -154,25 +181,42 @@ app.use(
   adminRoutes
 );
 
-
+/*
+ * Admin customers
+ */
 
 app.use(
   "/api/admin/customers",
   adminCustomerRoutes
 );
 
+/*
+ * Customer messages
+ */
 
 app.use(
-  "/api/messages", 
-  messageRoutes);
+  "/api/messages",
+  messageRoutes
+);
 
+/*
+ * Admin blog management
+ */
 
-  app.use("/api/admin/blog", adminBlogRoutes);
+app.use(
+  "/api/admin/blog",
+  adminBlogRoutes
+);
 
-  app.use(
+/*
+ * Public blog
+ */
+
+app.use(
   "/api/blog",
   blogRoutes
 );
+
 /*
 |--------------------------------------------------------------------------
 | HEALTH CHECK
@@ -188,7 +232,7 @@ app.get("/", (req, res) => {
 
 /*
 |--------------------------------------------------------------------------
-| PAYSTACK - INITIALIZE PAYMENT
+| PAYSTACK — INITIALIZE PAYMENT
 |--------------------------------------------------------------------------
 */
 
@@ -271,7 +315,7 @@ app.post(
 
 /*
 |--------------------------------------------------------------------------
-| PAYSTACK - VERIFY PAYMENT
+| PAYSTACK — VERIFY PAYMENT
 |--------------------------------------------------------------------------
 */
 
@@ -319,23 +363,18 @@ app.get(
 |--------------------------------------------------------------------------
 | API 404 HANDLER
 |--------------------------------------------------------------------------
-|
-| Important:
-| Return JSON instead of Express' default HTML page.
-|
-| This prevents errors such as:
-|
-| Unexpected token '<', "<!DOCTYPE "... is not valid JSON
-|
-|--------------------------------------------------------------------------
 */
 
-app.use("/api", (req, res) => {
-  return res.status(404).json({
-    success: false,
-    message: `API route not found: ${req.method} ${req.originalUrl}`,
-  });
-});
+app.use(
+  "/api",
+  (req, res) => {
+    return res.status(404).json({
+      success: false,
+      message:
+        `API route not found: ${req.method} ${req.originalUrl}`,
+    });
+  }
+);
 
 /*
 |--------------------------------------------------------------------------
