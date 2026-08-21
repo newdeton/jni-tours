@@ -1,0 +1,1810 @@
+/* =========================================================
+   JNI TOURS — ADMIN DASHBOARD
+   Premium Administration Interface
+   ========================================================= */
+
+/* =========================================================
+   DESIGN TOKENS
+   ========================================================= */
+
+.admin-dashboard {
+  --admin-green-950: #071a13;
+  --admin-green-900: #0b241b;
+  --admin-green-800: #12372a;
+  --admin-green-700: #1d513d;
+  --admin-green-600: #286449;
+  --admin-green-500: #39775a;
+
+  --admin-gold-700: #9b7426;
+  --admin-gold-600: #b4872e;
+  --admin-gold-500: #c89b3c;
+  --admin-gold-400: #e0bc62;
+  --admin-gold-300: #e8c878;
+
+  --admin-ink: #17231d;
+  --admin-ink-soft: #35443b;
+  --admin-muted: #6f7c73;
+  --admin-muted-light: #96a19a;
+
+  --admin-bg: #f5f7f4;
+  --admin-surface: #ffffff;
+  --admin-surface-soft: #fafcf9;
+
+  --admin-border: #e4e9e5;
+  --admin-border-soft: #edf1ed;
+
+  --admin-success: #26734a;
+  --admin-success-bg: #eaf6ee;
+
+  --admin-warning: #9a7123;
+  --admin-warning-bg: #fcf5e5;
+
+  --admin-danger: #a33f42;
+  --admin-danger-bg: #fbecee;
+
+  --admin-shadow-xs:
+    0 1px 2px rgba(10, 35, 25, 0.03);
+
+  --admin-shadow-sm:
+    0 6px 18px rgba(10, 35, 25, 0.045);
+
+  --admin-shadow-md:
+    0 14px 35px rgba(10, 35, 25, 0.065);
+
+  --admin-radius-sm: 10px;
+  --admin-radius-md: 14px;
+  --admin-radius-lg: 18px;
+
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 0 3rem;
+  color: var(--admin-ink);
+}
+
+
+/* =========================================================
+   GLOBAL ELEMENT BEHAVIOR
+   ========================================================= */
+
+.admin-dashboard *,
+.admin-dashboard *::before,
+.admin-dashboard *::after {
+  box-sizing: border-box;
+}
+
+.admin-dashboard button,
+.admin-dashboard a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.admin-dashboard button {
+  font: inherit;
+}
+
+
+/* =========================================================
+   DASHBOARD HEADER
+   ========================================================= */
+
+.admin-dashboard-header {
+  position: relative;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 2rem;
+
+  min-height: 150px;
+
+  margin-bottom: 1.5rem;
+  padding: 1.9rem 2rem;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(18, 55, 42, 0.12);
+  border-radius: var(--admin-radius-lg);
+
+  background:
+    radial-gradient(
+      circle at 90% 15%,
+      rgba(200, 155, 60, 0.14),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 75% 100%,
+      rgba(39, 100, 73, 0.13),
+      transparent 34%
+    ),
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #f8faf7 58%,
+      #f3f7f2 100%
+    );
+
+  box-shadow: var(--admin-shadow-sm);
+}
+
+.admin-dashboard-header::before {
+  content: "";
+
+  position: absolute;
+
+  width: 240px;
+  height: 240px;
+
+  right: -95px;
+  top: -130px;
+
+  border: 1px solid rgba(200, 155, 60, 0.18);
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.admin-dashboard-header::after {
+  content: "";
+
+  position: absolute;
+
+  width: 140px;
+  height: 140px;
+
+  right: 85px;
+  bottom: -105px;
+
+  border: 1px solid rgba(18, 55, 42, 0.08);
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.admin-dashboard-heading {
+  position: relative;
+  z-index: 1;
+
+  min-width: 0;
+}
+
+.admin-dashboard-heading > span,
+.admin-business-overview-heading span,
+.admin-quick-heading > span {
+  display: block;
+
+  margin-bottom: 0.5rem;
+
+  color: var(--admin-gold-600);
+
+  font-size: 0.68rem;
+  font-weight: 800;
+
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.admin-dashboard-heading h1 {
+  margin: 0;
+
+  color: var(--admin-green-900);
+
+  font-size: clamp(1.75rem, 3vw, 2.65rem);
+  font-weight: 700;
+  line-height: 1.08;
+
+  letter-spacing: -0.045em;
+}
+
+.admin-dashboard-heading h1 em {
+  color: var(--admin-green-700);
+  font-style: normal;
+}
+
+.admin-dashboard-heading p {
+  max-width: 650px;
+
+  margin: 0.7rem 0 0;
+
+  color: var(--admin-muted);
+
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   HEADER ACTIONS
+   ========================================================= */
+
+.admin-dashboard-header-actions {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+
+  gap: 0.65rem;
+
+  flex-shrink: 0;
+}
+
+.admin-dashboard-refresh {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.45rem;
+
+  min-height: 42px;
+
+  padding: 0.65rem 0.9rem;
+
+  border: 1px solid var(--admin-border);
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.8);
+
+  color: var(--admin-ink-soft);
+
+  font-size: 0.76rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.admin-dashboard-refresh svg {
+  width: 15px;
+  height: 15px;
+}
+
+.admin-dashboard-refresh:hover:not(:disabled) {
+  border-color: rgba(18, 55, 42, 0.2);
+
+  background: #ffffff;
+
+  color: var(--admin-green-800);
+
+  transform: translateY(-1px);
+
+  box-shadow: var(--admin-shadow-xs);
+}
+
+.admin-dashboard-refresh:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.admin-primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.55rem;
+
+  min-height: 42px;
+
+  padding: 0.7rem 1rem;
+
+  border: 1px solid var(--admin-green-800);
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--admin-green-800),
+      var(--admin-green-900)
+    );
+
+  color: #ffffff;
+
+  font-size: 0.76rem;
+  font-weight: 800;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 7px 16px rgba(11, 36, 27, 0.14);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.admin-primary-button:hover {
+  background:
+    linear-gradient(
+      135deg,
+      var(--admin-green-700),
+      var(--admin-green-800)
+    );
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 22px rgba(11, 36, 27, 0.19);
+}
+
+.admin-primary-button svg {
+  width: 15px;
+  height: 15px;
+}
+
+
+/* =========================================================
+   SPINNING REFRESH ICON
+   ========================================================= */
+
+.admin-spin {
+  animation: admin-dashboard-spin 0.85s linear infinite;
+}
+
+@keyframes admin-dashboard-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   ERROR NOTICE
+   ========================================================= */
+
+.admin-dashboard-error {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 1rem;
+
+  margin-bottom: 1.25rem;
+  padding: 0.95rem 1.05rem;
+
+  border: 1px solid #f0d6d7;
+  border-radius: var(--admin-radius-md);
+
+  background:
+    linear-gradient(
+      135deg,
+      #fffafa,
+      #fff6f6
+    );
+
+  box-shadow: var(--admin-shadow-xs);
+}
+
+.admin-dashboard-error > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+
+  min-width: 0;
+}
+
+.admin-dashboard-error strong {
+  color: #7f3034;
+
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.admin-dashboard-error span {
+  color: #9b6668;
+
+  font-size: 0.7rem;
+  line-height: 1.5;
+}
+
+.admin-dashboard-error button {
+  flex-shrink: 0;
+
+  padding: 0.5rem 0.75rem;
+
+  border: 1px solid #e7bfc1;
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #8d363a;
+
+  font-size: 0.7rem;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.admin-dashboard-error button:hover {
+  border-color: #dba5a8;
+  background: #fffafa;
+}
+
+
+/* =========================================================
+   LOADING STATE
+   ========================================================= */
+
+.admin-dashboard-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+
+  min-height: 420px;
+
+  padding: 3rem;
+
+  border: 1px solid var(--admin-border);
+  border-radius: var(--admin-radius-lg);
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(18, 55, 42, 0.035),
+      transparent 45%
+    ),
+    var(--admin-surface);
+
+  box-shadow: var(--admin-shadow-sm);
+
+  text-align: center;
+}
+
+.admin-dashboard-loading-icon {
+  width: 28px;
+  height: 28px;
+
+  margin-bottom: 1rem;
+
+  color: var(--admin-gold-500);
+
+  animation: admin-dashboard-spin 0.9s linear infinite;
+}
+
+.admin-dashboard-loading strong {
+  color: var(--admin-green-900);
+
+  font-size: 0.9rem;
+}
+
+.admin-dashboard-loading span {
+  margin-top: 0.35rem;
+
+  color: var(--admin-muted);
+
+  font-size: 0.74rem;
+}
+
+
+/* =========================================================
+   STATISTICS GRID
+   ========================================================= */
+
+.admin-stats-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 0.9rem;
+
+  margin-bottom: 0.9rem;
+}
+
+.admin-stat-card {
+  position: relative;
+
+  min-width: 0;
+
+  min-height: 158px;
+
+  padding: 1.25rem 1.3rem;
+
+  overflow: hidden;
+
+  border: 1px solid var(--admin-border);
+  border-radius: var(--admin-radius-md);
+
+  background: var(--admin-surface);
+
+  box-shadow: var(--admin-shadow-xs);
+
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease;
+}
+
+.admin-stat-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 105px;
+  height: 105px;
+
+  right: -45px;
+  bottom: -55px;
+
+  border-radius: 50%;
+
+  background: rgba(18, 55, 42, 0.035);
+
+  pointer-events: none;
+}
+
+.admin-stat-card:hover {
+  border-color: rgba(18, 55, 42, 0.14);
+
+  transform: translateY(-3px);
+
+  box-shadow: var(--admin-shadow-md);
+}
+
+.admin-stat-top {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 1rem;
+
+  margin-bottom: 1.35rem;
+}
+
+.admin-stat-top > span {
+  color: var(--admin-muted);
+
+  font-size: 0.68rem;
+  font-weight: 800;
+
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+}
+
+.admin-stat-icon {
+  display: grid;
+  place-items: center;
+
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  border: 1px solid rgba(18, 55, 42, 0.08);
+  border-radius: 11px;
+
+  background: #f0f5f1;
+
+  color: var(--admin-green-700);
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.admin-stat-card:hover .admin-stat-icon {
+  background: var(--admin-green-800);
+  color: #ffffff;
+
+  transform: translateY(-1px);
+}
+
+.admin-stat-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.admin-stat-card > strong {
+  position: relative;
+  z-index: 1;
+
+  display: block;
+
+  color: var(--admin-green-900);
+
+  font-size: clamp(1.5rem, 2vw, 1.9rem);
+  font-weight: 750;
+
+  line-height: 1;
+
+  letter-spacing: -0.045em;
+}
+
+.admin-stat-card > small {
+  position: relative;
+  z-index: 1;
+
+  display: block;
+
+  margin-top: 0.65rem;
+
+  color: var(--admin-muted-light);
+
+  font-size: 0.69rem;
+  line-height: 1.4;
+}
+
+/* Individual stat accents */
+
+.admin-stat-card.bookings {
+  border-top: 2px solid var(--admin-green-700);
+}
+
+.admin-stat-card.revenue {
+  border-top: 2px solid var(--admin-gold-500);
+}
+
+.admin-stat-card.customers {
+  border-top: 2px solid #557c67;
+}
+
+.admin-stat-card.confirmed {
+  border-top: 2px solid #4b9566;
+}
+
+.admin-stat-card.revenue .admin-stat-icon {
+  background: #faf4e6;
+  color: var(--admin-gold-700);
+}
+
+.admin-stat-card.confirmed .admin-stat-icon {
+  background: var(--admin-success-bg);
+  color: var(--admin-success);
+}
+
+
+/* =========================================================
+   MAIN DASHBOARD GRID
+   ========================================================= */
+
+.admin-dashboard-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.45fr)
+    minmax(330px, 0.75fr);
+
+  gap: 0.9rem;
+
+  margin-bottom: 0.9rem;
+}
+
+
+/* =========================================================
+   GENERIC PANEL
+   ========================================================= */
+
+.admin-panel {
+  min-width: 0;
+
+  overflow: hidden;
+
+  border: 1px solid var(--admin-border);
+  border-radius: var(--admin-radius-md);
+
+  background: var(--admin-surface);
+
+  box-shadow: var(--admin-shadow-xs);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.admin-panel:hover {
+  border-color: rgba(18, 55, 42, 0.12);
+
+  box-shadow: var(--admin-shadow-sm);
+}
+
+
+/* =========================================================
+   PANEL HEADER
+   ========================================================= */
+
+.admin-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 1rem;
+
+  min-height: 86px;
+
+  padding: 1.15rem 1.35rem;
+
+  border-bottom: 1px solid var(--admin-border-soft);
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff,
+      #fcfdfc
+    );
+}
+
+.admin-panel-header > div {
+  min-width: 0;
+}
+
+.admin-panel-header span {
+  display: block;
+
+  margin-bottom: 0.3rem;
+
+  color: var(--admin-gold-600);
+
+  font-size: 0.61rem;
+  font-weight: 800;
+
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.admin-panel-header h2 {
+  margin: 0;
+
+  color: var(--admin-green-900);
+
+  font-size: 1rem;
+  font-weight: 750;
+
+  letter-spacing: -0.025em;
+}
+
+.admin-panel-header a {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 0.35rem;
+
+  flex-shrink: 0;
+
+  color: var(--admin-green-700);
+
+  font-size: 0.68rem;
+  font-weight: 800;
+
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease,
+    gap 0.2s ease;
+}
+
+.admin-panel-header a svg {
+  width: 14px;
+  height: 14px;
+}
+
+.admin-panel-header a:hover {
+  color: var(--admin-gold-700);
+
+  gap: 0.5rem;
+}
+
+
+/* =========================================================
+   RECENT BOOKINGS
+   ========================================================= */
+
+.admin-bookings-list {
+  width: 100%;
+}
+
+.admin-booking-row {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  gap: 0.85rem;
+
+  min-height: 78px;
+
+  padding: 0.9rem 1.35rem;
+
+  border-bottom: 1px solid #f0f3f0;
+
+  transition:
+    background 0.2s ease,
+    padding-left 0.2s ease;
+}
+
+.admin-booking-row:last-child {
+  border-bottom: 0;
+}
+
+.admin-booking-row:hover {
+  background:
+    linear-gradient(
+      90deg,
+      #fbfdfb,
+      #ffffff
+    );
+}
+
+.admin-booking-avatar {
+  display: grid;
+  place-items: center;
+
+  width: 42px;
+  height: 42px;
+
+  flex: 0 0 42px;
+
+  border: 1px solid rgba(18, 55, 42, 0.08);
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #edf4ef,
+      #e3ede7
+    );
+
+  color: var(--admin-green-800);
+
+  font-size: 0.78rem;
+  font-weight: 850;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
+.admin-booking-info {
+  min-width: 0;
+
+  flex: 1;
+}
+
+.admin-booking-info strong,
+.admin-booking-info span,
+.admin-booking-info small {
+  display: block;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+.admin-booking-info strong {
+  color: var(--admin-ink);
+
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.admin-booking-info span {
+  margin-top: 0.25rem;
+
+  color: var(--admin-ink-soft);
+
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.admin-booking-info small {
+  margin-top: 0.27rem;
+
+  color: var(--admin-muted-light);
+
+  font-size: 0.62rem;
+}
+
+.admin-booking-amount {
+  display: flex;
+  align-items: flex-end;
+
+  flex-direction: column;
+
+  gap: 0.35rem;
+
+  min-width: 85px;
+
+  flex-shrink: 0;
+}
+
+.admin-booking-amount strong {
+  color: var(--admin-green-900);
+
+  font-size: 0.75rem;
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   BOOKING STATUS BADGES
+   ========================================================= */
+
+.booking-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 64px;
+
+  padding: 0.27rem 0.5rem;
+
+  border: 1px solid transparent;
+  border-radius: 999px;
+
+  font-size: 0.58rem;
+  font-weight: 800;
+
+  line-height: 1;
+
+  text-transform: capitalize;
+}
+
+.booking-status.pending {
+  border-color: #f0dfb5;
+  background: var(--admin-warning-bg);
+  color: var(--admin-warning);
+}
+
+.booking-status.confirmed {
+  border-color: #cce7d5;
+  background: var(--admin-success-bg);
+  color: var(--admin-success);
+}
+
+.booking-status.completed {
+  border-color: #c9e0d5;
+  background: #e8f4ed;
+  color: #226a48;
+}
+
+.booking-status.cancelled {
+  border-color: #edcfd2;
+  background: var(--admin-danger-bg);
+  color: var(--admin-danger);
+}
+
+.booking-status.failed {
+  border-color: #edcfd2;
+  background: var(--admin-danger-bg);
+  color: var(--admin-danger);
+}
+
+
+/* =========================================================
+   EMPTY BOOKINGS STATE
+   ========================================================= */
+
+.admin-dashboard-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+
+  min-height: 250px;
+
+  padding: 2.5rem 1.5rem;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(18, 55, 42, 0.035),
+      transparent 52%
+    );
+}
+
+.admin-dashboard-empty > svg {
+  width: 40px;
+  height: 40px;
+
+  margin-bottom: 0.9rem;
+  padding: 0.65rem;
+
+  border: 1px solid #dce7df;
+  border-radius: 12px;
+
+  background: #f2f7f3;
+
+  color: var(--admin-green-700);
+}
+
+.admin-dashboard-empty strong {
+  color: var(--admin-green-900);
+
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.admin-dashboard-empty span {
+  max-width: 250px;
+
+  margin-top: 0.35rem;
+
+  color: var(--admin-muted);
+
+  font-size: 0.67rem;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   BOOKING STATUS PANEL
+   ========================================================= */
+
+.admin-status-list {
+  padding: 0.65rem;
+}
+
+.admin-status-row {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  gap: 0.8rem;
+
+  min-height: 68px;
+
+  margin-bottom: 0.35rem;
+  padding: 0.7rem 0.8rem;
+
+  border: 1px solid transparent;
+  border-radius: 12px;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.admin-status-row:last-child {
+  margin-bottom: 0;
+}
+
+.admin-status-row:hover {
+  border-color: var(--admin-border);
+
+  background: #fafcfb;
+
+  transform: translateX(2px);
+}
+
+.admin-status-icon {
+  display: grid;
+  place-items: center;
+
+  width: 38px;
+  height: 38px;
+
+  flex: 0 0 38px;
+
+  border-radius: 11px;
+}
+
+.admin-status-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.admin-status-row > div:nth-child(2) {
+  min-width: 0;
+
+  flex: 1;
+}
+
+.admin-status-row strong,
+.admin-status-row span {
+  display: block;
+}
+
+.admin-status-row strong {
+  color: var(--admin-green-900);
+
+  font-size: 0.9rem;
+  font-weight: 800;
+
+  line-height: 1.1;
+}
+
+.admin-status-row span {
+  margin-top: 0.2rem;
+
+  color: var(--admin-muted);
+
+  font-size: 0.64rem;
+  font-weight: 650;
+}
+
+.admin-status-row > svg:last-child {
+  width: 14px;
+  height: 14px;
+
+  color: #a0aaa3;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.admin-status-row:hover > svg:last-child {
+  color: var(--admin-green-700);
+
+  transform: translate(2px, -2px);
+}
+
+
+/* STATUS COLORS */
+
+.admin-status-row.pending .admin-status-icon {
+  background: var(--admin-warning-bg);
+  color: var(--admin-warning);
+}
+
+.admin-status-row.confirmed .admin-status-icon {
+  background: var(--admin-success-bg);
+  color: var(--admin-success);
+}
+
+.admin-status-row.completed .admin-status-icon {
+  background: #e9f4ee;
+  color: #216b48;
+}
+
+.admin-status-row.cancelled .admin-status-icon {
+  background: var(--admin-danger-bg);
+  color: var(--admin-danger);
+}
+
+
+/* =========================================================
+   BUSINESS OVERVIEW
+   ========================================================= */
+
+.admin-business-overview {
+  position: relative;
+
+  margin-bottom: 0.9rem;
+  padding: 1.4rem;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(18, 55, 42, 0.13);
+  border-radius: var(--admin-radius-md);
+
+  background:
+    radial-gradient(
+      circle at 90% 0%,
+      rgba(200, 155, 60, 0.08),
+      transparent 26%
+    ),
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #f8faf8
+    );
+
+  box-shadow: var(--admin-shadow-xs);
+}
+
+.admin-business-overview-heading {
+  margin-bottom: 1.05rem;
+}
+
+.admin-business-overview-heading h2,
+.admin-quick-heading h2 {
+  margin: 0;
+
+  color: var(--admin-green-900);
+
+  font-size: 1.05rem;
+  font-weight: 750;
+
+  letter-spacing: -0.025em;
+}
+
+.admin-business-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 0.75rem;
+}
+
+.admin-business-card {
+  display: flex;
+  align-items: center;
+
+  gap: 0.85rem;
+
+  min-width: 0;
+
+  padding: 1rem;
+
+  border: 1px solid var(--admin-border);
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.88);
+
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.admin-business-card:hover {
+  border-color: rgba(18, 55, 42, 0.16);
+
+  transform: translateY(-2px);
+
+  box-shadow: var(--admin-shadow-sm);
+}
+
+.admin-business-card-icon {
+  display: grid;
+  place-items: center;
+
+  width: 40px;
+  height: 40px;
+
+  flex: 0 0 40px;
+
+  border-radius: 11px;
+
+  background: #edf4ef;
+
+  color: var(--admin-green-700);
+}
+
+.admin-business-card-icon svg {
+  width: 17px;
+  height: 17px;
+}
+
+.admin-business-card:nth-child(3)
+  .admin-business-card-icon {
+  background: #faf3e3;
+
+  color: var(--admin-gold-700);
+}
+
+.admin-business-card > div:last-child {
+  min-width: 0;
+}
+
+.admin-business-card span,
+.admin-business-card strong,
+.admin-business-card small {
+  display: block;
+}
+
+.admin-business-card span {
+  color: var(--admin-muted);
+
+  font-size: 0.62rem;
+  font-weight: 750;
+
+  text-transform: uppercase;
+  letter-spacing: 0.045em;
+}
+
+.admin-business-card strong {
+  margin-top: 0.28rem;
+
+  color: var(--admin-green-900);
+
+  font-size: 1.15rem;
+  font-weight: 800;
+
+  letter-spacing: -0.035em;
+}
+
+.admin-business-card small {
+  overflow: hidden;
+
+  margin-top: 0.2rem;
+
+  color: var(--admin-muted-light);
+
+  font-size: 0.61rem;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   QUICK ACTIONS
+   ========================================================= */
+
+.admin-quick-actions {
+  padding: 1.4rem;
+
+  border: 1px solid var(--admin-border);
+  border-radius: var(--admin-radius-md);
+
+  background: var(--admin-surface);
+
+  box-shadow: var(--admin-shadow-xs);
+}
+
+.admin-quick-heading {
+  margin-bottom: 1.1rem;
+}
+
+.admin-quick-heading p {
+  margin: 0.4rem 0 0;
+
+  color: var(--admin-muted);
+
+  font-size: 0.69rem;
+  line-height: 1.5;
+}
+
+.admin-action-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 0.7rem;
+}
+
+.admin-action-grid a {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    38px
+    minmax(0, 1fr)
+    16px;
+
+  align-items: center;
+
+  gap: 0.7rem;
+
+  min-width: 0;
+
+  min-height: 76px;
+
+  padding: 0.85rem;
+
+  overflow: hidden;
+
+  border: 1px solid var(--admin-border);
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #fafcfb
+    );
+
+  color: inherit;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.22s ease,
+    border-color 0.22s ease,
+    box-shadow 0.22s ease,
+    background 0.22s ease;
+}
+
+.admin-action-grid a::after {
+  content: "";
+
+  position: absolute;
+
+  width: 70px;
+  height: 70px;
+
+  right: -35px;
+  bottom: -40px;
+
+  border-radius: 50%;
+
+  background: rgba(18, 55, 42, 0.04);
+
+  pointer-events: none;
+}
+
+.admin-action-grid a:hover {
+  border-color: rgba(18, 55, 42, 0.17);
+
+  background: #ffffff;
+
+  transform: translateY(-3px);
+
+  box-shadow: var(--admin-shadow-sm);
+}
+
+.admin-action-grid a > svg:first-child {
+  display: grid;
+  place-items: center;
+
+  width: 38px;
+  height: 38px;
+
+  padding: 0.58rem;
+
+  border: 1px solid rgba(18, 55, 42, 0.08);
+  border-radius: 10px;
+
+  background: #edf4ef;
+
+  color: var(--admin-green-700);
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.admin-action-grid a:hover > svg:first-child {
+  background: var(--admin-green-800);
+  color: #ffffff;
+}
+
+.admin-action-grid a div {
+  min-width: 0;
+}
+
+.admin-action-grid a strong,
+.admin-action-grid a span {
+  display: block;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+.admin-action-grid a strong {
+  color: var(--admin-green-900);
+
+  font-size: 0.72rem;
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+.admin-action-grid a span {
+  margin-top: 0.25rem;
+
+  color: var(--admin-muted);
+
+  font-size: 0.61rem;
+  line-height: 1.4;
+}
+
+.admin-action-grid a > svg:last-child {
+  position: relative;
+  z-index: 1;
+
+  width: 14px;
+  height: 14px;
+
+  color: #9aa49d;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.admin-action-grid a:hover > svg:last-child {
+  color: var(--admin-gold-600);
+
+  transform: translate(2px, -2px);
+}
+
+
+/* =========================================================
+   RESPONSIVE — LARGE LAPTOP
+   ========================================================= */
+
+@media (max-width: 1200px) {
+  .admin-dashboard {
+    padding-bottom: 2.5rem;
+  }
+
+  .admin-stats-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .admin-action-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 950px) {
+  .admin-dashboard-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    min-height: auto;
+
+    padding: 1.5rem;
+  }
+
+  .admin-dashboard-header-actions {
+    width: 100%;
+  }
+
+  .admin-dashboard-refresh,
+  .admin-primary-button {
+    flex: 1;
+  }
+
+  .admin-dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-business-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-business-card {
+    min-height: 70px;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+  .admin-dashboard {
+    padding-bottom: 2rem;
+  }
+
+  .admin-dashboard-header {
+    gap: 1.25rem;
+
+    margin-bottom: 0.85rem;
+    padding: 1.2rem;
+
+    border-radius: 14px;
+  }
+
+  .admin-dashboard-heading h1 {
+    font-size: 1.65rem;
+  }
+
+  .admin-dashboard-heading p {
+    font-size: 0.78rem;
+  }
+
+  .admin-dashboard-header-actions {
+    align-items: stretch;
+
+    flex-direction: column;
+  }
+
+  .admin-dashboard-refresh,
+  .admin-primary-button {
+    width: 100%;
+    flex: none;
+  }
+
+  .admin-dashboard-error {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    padding: 0.85rem;
+  }
+
+  .admin-dashboard-error button {
+    width: 100%;
+  }
+
+  .admin-stats-grid {
+    grid-template-columns: 1fr;
+
+    gap: 0.7rem;
+
+    margin-bottom: 0.7rem;
+  }
+
+  .admin-stat-card {
+    min-height: 135px;
+
+    padding: 1.05rem;
+  }
+
+  .admin-stat-top {
+    margin-bottom: 1rem;
+  }
+
+  .admin-dashboard-grid {
+    gap: 0.7rem;
+
+    margin-bottom: 0.7rem;
+  }
+
+  .admin-panel-header {
+    min-height: 76px;
+
+    padding: 1rem;
+  }
+
+  .admin-booking-row {
+    align-items: flex-start;
+
+    gap: 0.7rem;
+
+    min-height: auto;
+
+    padding: 0.85rem 1rem;
+  }
+
+  .admin-booking-avatar {
+    width: 38px;
+    height: 38px;
+
+    flex-basis: 38px;
+  }
+
+  .admin-booking-amount {
+    min-width: 70px;
+  }
+
+  .admin-booking-info small {
+    max-width: 100%;
+  }
+
+  .admin-status-list {
+    padding: 0.5rem;
+  }
+
+  .admin-status-row {
+    min-height: 62px;
+
+    padding: 0.6rem 0.65rem;
+  }
+
+  .admin-business-overview,
+  .admin-quick-actions {
+    padding: 1rem;
+  }
+
+  .admin-business-grid {
+    gap: 0.6rem;
+  }
+
+  .admin-business-card {
+    padding: 0.85rem;
+  }
+
+  .admin-action-grid {
+    grid-template-columns: 1fr;
+
+    gap: 0.6rem;
+  }
+
+  .admin-action-grid a {
+    min-height: 70px;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE — SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 420px) {
+  .admin-dashboard-heading h1 {
+    font-size: 1.45rem;
+  }
+
+  .admin-panel-header h2 {
+    font-size: 0.92rem;
+  }
+
+  .admin-panel-header span {
+    font-size: 0.56rem;
+  }
+
+  .admin-panel-header a {
+    font-size: 0.62rem;
+  }
+
+  .admin-booking-row {
+    display: grid;
+
+    grid-template-columns:
+      38px
+      minmax(0, 1fr);
+
+    align-items: center;
+  }
+
+  .admin-booking-avatar {
+    grid-row: span 2;
+  }
+
+  .admin-booking-info {
+    grid-column: 2;
+  }
+
+  .admin-booking-amount {
+    grid-column: 2;
+
+    align-items: flex-start;
+
+    flex-direction: row;
+
+    margin-top: -0.1rem;
+  }
+
+  .admin-booking-amount strong {
+    font-size: 0.7rem;
+  }
+
+  .booking-status {
+    min-width: 58px;
+  }
+
+  .admin-business-card strong {
+    font-size: 1.05rem;
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+.admin-dashboard a:focus-visible,
+.admin-dashboard button:focus-visible {
+  outline: 3px solid rgba(200, 155, 60, 0.28);
+  outline-offset: 3px;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .admin-dashboard *,
+  .admin-dashboard *::before,
+  .admin-dashboard *::after {
+    scroll-behavior: auto !important;
+
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+  }
+}

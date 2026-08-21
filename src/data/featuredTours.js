@@ -1,0 +1,173 @@
+const featuredTours = [
+  {
+    id: 1,
+    slug: "masai-mara-safari",
+    title: "Masai Mara Wildlife Escape",
+    destination: "Kenya · Masai Mara",
+    duration: "4 Days / 3 Nights",
+    category: "Wildlife Safari",
+    style: "Comfort",
+    price: 1250,
+    priceLabel: "per person",
+    rating: 4.9,
+    reviews: 38,
+    badge: "Best Seller",
+    image:
+      "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1200&q=85",
+  },
+
+  {
+    id: 2,
+    slug: "amboseli-kilimanjaro-safari",
+    title: "Amboseli & Kilimanjaro Safari",
+    destination: "Kenya · Amboseli",
+    duration: "3 Days / 2 Nights",
+    category: "Wildlife Safari",
+    style: "Comfort",
+    price: 890,
+    priceLabel: "per person",
+    rating: 4.8,
+    reviews: 27,
+    badge: "Scenic Favorite",
+    image:
+      "https://images.unsplash.com/photo-1518709594023-6eab9bab7b23?auto=format&fit=crop&w=1200&q=85",
+  },
+
+  {
+    id: 3,
+    slug: "samburu-wilderness-adventure",
+    title: "Samburu Wilderness Adventure",
+    destination: "Kenya · Samburu",
+    duration: "4 Days / 3 Nights",
+    category: "Wildlife Safari",
+    style: "Comfort",
+    price: 1180,
+    priceLabel: "per person",
+    rating: 4.8,
+    reviews: 21,
+    badge: "Wild & Remote",
+    image:
+      "https://images.unsplash.com/photo-1535338454770-8be927b5a00b?auto=format&fit=crop&w=1200&q=85",
+  },
+
+  {
+    id: 4,
+    slug: "diani-beach-escape",
+    title: "Diani Beach Escape",
+    destination: "Kenya · Diani Beach",
+    duration: "5 Days / 4 Nights",
+    category: "Beach Holiday",
+    style: "Premium",
+    price: 980,
+    priceLabel: "per person",
+    rating: 4.9,
+    reviews: 34,
+    badge: "Beach Favorite",
+    image:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=85",
+  },
+
+  {
+    id: 5,
+    slug: "tsavo-east-west-safari",
+    title: "Tsavo East & West Safari",
+    destination: "Kenya · Tsavo",
+    duration: "4 Days / 3 Nights",
+    category: "Wildlife Safari",
+    style: "Comfort",
+    price: 1090,
+    priceLabel: "per person",
+    rating: 4.7,
+    reviews: 19,
+    badge: "Adventure",
+    image:
+      "https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?auto=format&fit=crop&w=1200&q=85",
+  },
+
+  {
+    id: 6,
+    slug: "uganda-gorilla-experience",
+    title: "Uganda Gorilla Experience",
+    destination: "Uganda · Bwindi",
+    duration: "5 Days / 4 Nights",
+    category: "Gorilla Trekking",
+    style: "Premium",
+    price: 2450,
+    priceLabel: "per person",
+    rating: 4.9,
+    reviews: 16,
+    badge: "Bucket List",
+    image:
+      "https://images.unsplash.com/photo-1535338454770-8be927b5a00b?auto=format&fit=crop&w=1200&q=85",
+  },
+
+  {
+    id: 7,
+    slug: "tanzania-serengeti-safari",
+    title: "Tanzania Serengeti Safari",
+    destination: "Tanzania · Serengeti",
+    duration: "5 Days / 4 Nights",
+    category: "Wildlife Safari",
+    style: "Premium",
+    price: 1850,
+    priceLabel: "per person",
+    rating: 4.9,
+    reviews: 29,
+    badge: "Wildlife Classic",
+    image:
+      "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1200&q=85",
+  },
+
+  {
+    id: 8,
+    slug: "kilimanjaro-adventure",
+    title: "Kilimanjaro Adventure",
+    destination: "Tanzania · Mount Kilimanjaro",
+    duration: "7 Days / 6 Nights",
+    category: "Mountain Adventure",
+    style: "Adventure",
+    price: 2150,
+    priceLabel: "per person",
+    rating: 4.8,
+    reviews: 18,
+    badge: "Epic Adventure",
+    image:
+      "https://images.unsplash.com/photo-1518709594023-6eab9bab7b23?auto=format&fit=crop&w=1200&q=85",
+  },
+
+  {
+    id: 9,
+    slug: "zanzibar-island-escape",
+    title: "Zanzibar Island Escape",
+    destination: "Tanzania · Zanzibar",
+    duration: "5 Days / 4 Nights",
+    category: "Beach Holiday",
+    style: "Premium",
+    price: 1150,
+    priceLabel: "per person",
+    rating: 4.8,
+    reviews: 25,
+    badge: "Island Escape",
+    image:
+      "https://images.unsplash.com/photo-1540202404-a2f29016b523?auto=format&fit=crop&w=1200&q=85",
+  },
+
+  {
+    id: 10,
+    slug: "kenya-tanzania-grand-safari",
+    title: "Kenya & Tanzania Grand Safari",
+    destination: "Kenya & Tanzania",
+    duration: "10 Days / 9 Nights",
+    category: "Grand Safari",
+    style: "Luxury",
+    price: 3950,
+    priceLabel: "per person",
+    rating: 5.0,
+    reviews: 42,
+    badge: "Ultimate Journey",
+    image:
+      "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1200&q=85",
+  },
+];
+
+export default featuredTours;

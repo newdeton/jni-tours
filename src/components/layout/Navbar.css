@@ -1,0 +1,778 @@
+/* =========================================================
+   JNI TOURS — NAVBAR
+   Desktop + Tablet + Mobile
+   Premium Responsive Navigation
+   ========================================================= */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+
+  width: 100%;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border-bottom: 1px solid rgba(18, 55, 42, 0.08);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow: 0 4px 20px rgba(18, 55, 42, 0.04);
+}
+
+/* =========================================================
+   NAVBAR CONTAINER
+   ========================================================= */
+
+.navbar-container {
+  width: min(
+    calc(100% - 3rem),
+    var(--container-wide)
+  );
+
+  min-height: 82px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: var(--space-8);
+}
+
+/* =========================================================
+   LOGO / BRAND
+   ========================================================= */
+
+.navbar-logo {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 0.65rem;
+
+  flex-shrink: 0;
+
+  text-decoration: none;
+
+  color: inherit;
+}
+
+/* ---------------------------------------------------------
+   Logo Image
+   --------------------------------------------------------- */
+
+.navbar-logo-image {
+  display: block;
+
+  width: 48px;
+  height: 48px;
+
+  flex-shrink: 0;
+
+  object-fit: contain;
+
+  border-radius: 10px;
+
+  transition:
+    transform var(--transition-base),
+    opacity var(--transition-base);
+}
+
+.navbar-logo:hover .navbar-logo-image {
+  transform: scale(1.04);
+}
+
+/* ---------------------------------------------------------
+   Logo Text
+   --------------------------------------------------------- */
+
+.navbar-logo-text {
+  display: inline-flex;
+  align-items: baseline;
+
+  gap: 0.4rem;
+
+  white-space: nowrap;
+}
+
+.navbar-logo-main {
+  color: var(--color-primary);
+
+  font-family: var(--font-display);
+
+  font-size: 1.85rem;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: -0.025em;
+}
+
+.navbar-logo-sub {
+  color: var(--color-secondary);
+
+  font-size: 0.72rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.2em;
+}
+
+/* =========================================================
+   DESKTOP NAVIGATION
+   ========================================================= */
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+
+  gap: 1.65rem;
+
+  margin-left: auto;
+}
+
+.navbar-link {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 0.35rem;
+
+  padding: 0.5rem 0;
+
+  color: var(--color-heading);
+
+  background: transparent;
+
+  font-size: 0.9rem;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    color var(--transition-base),
+    transform var(--transition-base);
+}
+
+.navbar-link::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 0;
+  height: 2px;
+
+  background: var(--color-secondary);
+
+  transition: width var(--transition-base);
+}
+
+.navbar-link:hover,
+.navbar-link.active {
+  color: var(--color-primary);
+}
+
+.navbar-link:hover::after,
+.navbar-link.active::after {
+  width: 100%;
+}
+
+/* =========================================================
+   TOURS DROPDOWN
+   ========================================================= */
+
+.navbar-dropdown {
+  position: relative;
+}
+
+.navbar-dropdown-trigger {
+  border: 0;
+
+  cursor: pointer;
+
+  font-family: inherit;
+}
+
+.dropdown-icon {
+  width: 15px;
+  height: 15px;
+
+  transition: transform var(--transition-base);
+}
+
+.dropdown-icon.open {
+  transform: rotate(180deg);
+}
+
+.navbar-dropdown-menu {
+  position: absolute;
+
+  top: calc(100% + 1.1rem);
+  left: 50%;
+
+  width: 220px;
+
+  padding: 0.65rem;
+
+  transform: translateX(-50%);
+
+  background: var(--color-white);
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-md);
+
+  box-shadow: var(--shadow-lg);
+
+  z-index: 50;
+}
+
+.navbar-dropdown-menu::before {
+  content: "";
+
+  position: absolute;
+
+  top: -6px;
+  left: 50%;
+
+  width: 12px;
+  height: 12px;
+
+  transform: translateX(-50%) rotate(45deg);
+
+  background: var(--color-white);
+
+  border-left: 1px solid var(--color-border);
+  border-top: 1px solid var(--color-border);
+}
+
+.navbar-dropdown-menu a {
+  display: block;
+
+  padding: 0.75rem 0.85rem;
+
+  border-radius: var(--radius-sm);
+
+  color: var(--color-text);
+
+  font-size: 0.86rem;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.navbar-dropdown-menu a:hover {
+  color: var(--color-primary);
+
+  background: var(--color-background-soft);
+}
+
+/* =========================================================
+   DESKTOP ACTIONS
+   ========================================================= */
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 0.75rem;
+
+  flex-shrink: 0;
+}
+
+.navbar-icon-button {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 0.4rem;
+
+  padding: 0.55rem;
+
+  color: var(--color-text);
+
+  font-size: 0.8rem;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  transition: color var(--transition-base);
+}
+
+.navbar-icon-button svg {
+  width: 17px;
+  height: 17px;
+}
+
+.navbar-icon-button:hover {
+  color: var(--color-primary);
+}
+
+.navbar-book-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 44px;
+
+  padding: 0.7rem 1.2rem;
+
+  border-radius: var(--radius-full);
+
+  color: var(--color-white);
+
+  background: var(--color-primary);
+
+  font-size: 0.82rem;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  transition:
+    background var(--transition-base),
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.navbar-book-button:hover {
+  background: var(--color-primary-light);
+
+  transform: translateY(-2px);
+
+  box-shadow: var(--shadow-md);
+}
+
+/* =========================================================
+   MOBILE TOGGLE
+   ========================================================= */
+
+.navbar-mobile-toggle {
+  display: none;
+
+  width: 44px;
+  height: 44px;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border: 0;
+
+  border-radius: var(--radius-md);
+
+  color: var(--color-primary);
+
+  background: var(--color-background-soft);
+
+  font-size: 1.35rem;
+
+  cursor: pointer;
+
+  transition:
+    background var(--transition-base),
+    color var(--transition-base),
+    transform var(--transition-base);
+}
+
+.navbar-mobile-toggle:hover {
+  color: var(--color-white);
+
+  background: var(--color-primary);
+}
+
+.navbar-mobile-toggle:active {
+  transform: scale(0.96);
+}
+
+/* =========================================================
+   MOBILE MENU
+   ========================================================= */
+
+.navbar-mobile {
+  display: none;
+}
+
+.navbar-mobile-nav {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.navbar-mobile-nav > a,
+.mobile-dropdown-trigger {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+
+  padding: 1rem 0;
+
+  color: var(--color-heading);
+
+  background: transparent;
+
+  border: 0;
+
+  border-bottom: 1px solid var(--color-border);
+
+  font-family: inherit;
+
+  font-size: 0.95rem;
+
+  font-weight: 600;
+
+  text-align: left;
+
+  text-decoration: none;
+}
+
+.mobile-dropdown-trigger {
+  cursor: pointer;
+}
+
+.mobile-dropdown-trigger svg {
+  width: 16px;
+  height: 16px;
+
+  transition: transform var(--transition-base);
+}
+
+.mobile-dropdown-trigger svg.open {
+  transform: rotate(180deg);
+}
+
+.mobile-dropdown-menu {
+  padding: 0.4rem 0 0.4rem 1rem;
+}
+
+.mobile-dropdown-menu a {
+  display: block;
+
+  padding: 0.75rem 0;
+
+  color: var(--color-text);
+
+  font-size: 0.88rem;
+
+  font-weight: 500;
+
+  text-decoration: none;
+
+  transition:
+    color var(--transition-fast),
+    padding-left var(--transition-fast);
+}
+
+.mobile-dropdown-menu a:hover {
+  color: var(--color-primary);
+
+  padding-left: 0.25rem;
+}
+
+/* =========================================================
+   MOBILE ACTIONS
+   ========================================================= */
+
+.navbar-mobile-actions {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.7rem;
+
+  padding-top: 1.5rem;
+}
+
+.navbar-mobile-actions a {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.5rem;
+
+  min-height: 46px;
+
+  padding: 0.75rem 1rem;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-md);
+
+  color: var(--color-primary);
+
+  background: var(--color-white);
+
+  font-size: 0.88rem;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    background var(--transition-base),
+    color var(--transition-base),
+    border-color var(--transition-base),
+    transform var(--transition-base);
+}
+
+.navbar-mobile-actions a:hover {
+  background: var(--color-background-soft);
+
+  border-color: var(--color-primary);
+
+  transform: translateY(-1px);
+}
+
+.navbar-mobile-actions a svg {
+  width: 17px;
+  height: 17px;
+}
+
+.navbar-mobile-actions .mobile-book-button {
+  border-color: var(--color-primary);
+
+  color: var(--color-white);
+
+  background: var(--color-primary);
+}
+
+.navbar-mobile-actions .mobile-book-button:hover {
+  color: var(--color-white);
+
+  background: var(--color-primary-light);
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1120px) {
+
+  .navbar-container {
+    gap: 1.25rem;
+  }
+
+  .navbar-nav {
+    gap: 1rem;
+  }
+
+  .navbar-actions {
+    gap: 0.35rem;
+  }
+
+  .navbar-icon-button {
+    padding: 0.5rem;
+  }
+
+  .navbar-icon-button span {
+    display: none;
+  }
+
+  .navbar-logo-image {
+    width: 44px;
+    height: 44px;
+  }
+
+  .navbar-logo-main {
+    font-size: 1.7rem;
+  }
+
+  .navbar-logo-sub {
+    font-size: 0.66rem;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .navbar-container {
+    min-height: 74px;
+
+    gap: 1rem;
+  }
+
+  .navbar-nav,
+  .navbar-actions {
+    display: none;
+  }
+
+  .navbar-mobile-toggle {
+    display: inline-flex;
+  }
+
+  .navbar-mobile {
+    display: block;
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    padding: 0 1.5rem;
+
+    background: var(--color-white);
+
+    transition:
+      max-height 0.4s ease,
+      padding 0.4s ease;
+  }
+
+  .navbar-mobile.show {
+    max-height: 700px;
+
+    padding-top: 0.5rem;
+
+    padding-bottom: 1.5rem;
+
+    border-top: 1px solid var(--color-border);
+  }
+
+  .navbar-logo-image {
+    width: 43px;
+    height: 43px;
+  }
+
+  .navbar-logo-text {
+    gap: 0.32rem;
+  }
+
+  .navbar-logo-main {
+    font-size: 1.65rem;
+  }
+
+  .navbar-logo-sub {
+    font-size: 0.63rem;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .navbar-container {
+    width: min(
+      calc(100% - 2rem),
+      var(--container-wide)
+    );
+
+    min-height: 70px;
+  }
+
+  .navbar-logo {
+    gap: 0.5rem;
+  }
+
+  .navbar-logo-image {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 8px;
+  }
+
+  .navbar-logo-text {
+    gap: 0.28rem;
+  }
+
+  .navbar-logo-main {
+    font-size: 1.45rem;
+  }
+
+  .navbar-logo-sub {
+    font-size: 0.56rem;
+
+    letter-spacing: 0.16em;
+  }
+
+  .navbar-mobile {
+    padding-left: 1rem;
+
+    padding-right: 1rem;
+  }
+
+  .navbar-mobile-toggle {
+    width: 40px;
+    height: 40px;
+
+    font-size: 1.2rem;
+  }
+}
+
+/* =========================================================
+   VERY SMALL SCREENS
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+  .navbar-container {
+    width: calc(100% - 1.25rem);
+  }
+
+  .navbar-logo-image {
+    width: 35px;
+    height: 35px;
+  }
+
+  .navbar-logo-main {
+    font-size: 1.3rem;
+  }
+
+  .navbar-logo-sub {
+    display: none;
+  }
+}
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+.navbar a:focus-visible,
+.navbar button:focus-visible {
+  outline: 3px solid rgba(182, 138, 44, 0.3);
+
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .navbar *,
+  .navbar *::before,
+  .navbar *::after {
+    scroll-behavior: auto !important;
+
+    transition-duration: 0.01ms !important;
+
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+  }
+}

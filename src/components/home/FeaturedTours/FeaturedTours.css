@@ -1,0 +1,134 @@
+/* =========================================================
+   JNI TOURS — FEATURED TOURS
+   ========================================================= */
+
+.featured-tours {
+  padding: 5rem 0 7rem;
+
+  background: var(--color-background);
+}
+
+/* =========================
+   HEADING
+   ========================= */
+
+.featured-tours-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 2rem;
+
+  margin-bottom: 2.5rem;
+}
+
+.section-heading > div > span {
+  display: block;
+
+  margin-bottom: 0.65rem;
+
+  color: var(--color-accent-dark);
+
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.section-heading h2 {
+  max-width: 650px;
+
+  margin: 0;
+
+  color: var(--color-primary-dark);
+
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.3rem);
+  font-weight: 600;
+  line-height: 1.05;
+}
+
+.section-heading h2 em {
+  color: var(--color-accent-dark);
+
+  font-style: normal;
+}
+
+.section-heading-link {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 0.5rem;
+
+  flex-shrink: 0;
+
+  padding-bottom: 0.35rem;
+
+  border-bottom: 1px solid var(--color-accent);
+
+  color: var(--color-primary-dark);
+
+  font-size: 0.78rem;
+  font-weight: 800;
+
+  transition:
+    color var(--transition-base),
+    gap var(--transition-base);
+}
+
+.section-heading-link:hover {
+  color: var(--color-accent-dark);
+
+  gap: 0.8rem;
+}
+
+/* =========================
+   GRID
+   ========================= */
+
+.featured-tours-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 1.25rem;
+}
+
+/* =========================================================
+   LARGE TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  .featured-tours-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .featured-tours {
+    padding: 3.5rem 0 5rem;
+  }
+
+  .featured-tours-heading {
+    align-items: flex-start;
+    flex-direction: column;
+
+    gap: 1.25rem;
+
+    margin-bottom: 1.75rem;
+  }
+
+  .section-heading h2 {
+    font-size: 2.1rem;
+  }
+
+  .featured-tours-grid {
+    grid-template-columns: 1fr;
+
+    gap: 1rem;
+  }
+}

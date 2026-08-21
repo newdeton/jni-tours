@@ -1,0 +1,322 @@
+/* =========================================================
+   JNI TOURS — ADMIN HEADER
+   ========================================================= */
+
+.admin-header {
+  position: sticky;
+  top: 0;
+  z-index: 900;
+
+  min-height: 82px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 2rem;
+
+  padding: 1rem 2rem;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  border-bottom: 1px solid var(--color-border, #e7e9e5);
+
+  backdrop-filter: blur(14px);
+}
+
+/* =========================================================
+   LEFT
+   ========================================================= */
+
+.admin-header-left {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 1rem;
+}
+
+.admin-header-title {
+  min-width: 0;
+}
+
+.admin-header-title > span {
+  display: block;
+
+  margin-bottom: 0.2rem;
+
+  color: var(--color-accent-dark, #967322);
+
+  font-size: 0.5rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+}
+
+.admin-header-title h1 {
+  margin: 0;
+
+  color: var(--color-primary-dark, #08271b);
+
+  font-family: var(--font-display, Georgia, serif);
+  font-size: 1.65rem;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.admin-header-title p {
+  margin: 0.25rem 0 0;
+
+  color: var(--color-text-muted, #747b76);
+
+  font-size: 0.62rem;
+}
+
+/* =========================================================
+   MOBILE MENU
+   ========================================================= */
+
+.admin-mobile-menu {
+  display: none;
+
+  width: 40px;
+  height: 40px;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--color-border, #e7e9e5);
+  border-radius: 0.5rem;
+
+  color: var(--color-primary-dark, #08271b);
+  background: white;
+
+  cursor: pointer;
+}
+
+.admin-mobile-menu svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* =========================================================
+   ACTIONS
+   ========================================================= */
+
+.admin-header-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 0.6rem;
+}
+
+.admin-header-icon {
+  position: relative;
+
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--color-border, #e7e9e5);
+  border-radius: 50%;
+
+  color: var(--color-primary-dark, #08271b);
+  background: white;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.admin-header-icon:hover {
+  color: var(--color-accent-dark, #967322);
+
+  border-color: rgba(194, 151, 49, 0.35);
+
+  background: rgba(194, 151, 49, 0.06);
+}
+
+.admin-header-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* =========================================================
+   NOTIFICATION
+   ========================================================= */
+
+.admin-notification-dot {
+  position: absolute;
+
+  top: 8px;
+  right: 8px;
+
+  width: 6px;
+  height: 6px;
+
+  border: 1.5px solid white;
+  border-radius: 50%;
+
+  background: var(--color-accent, #c29731);
+}
+
+/* =========================================================
+   PROFILE
+   ========================================================= */
+
+.admin-profile {
+  min-height: 46px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 0.65rem;
+
+  margin-left: 0.35rem;
+  padding: 0.25rem 0.4rem 0.25rem 0.25rem;
+
+  border: 1px solid var(--color-border, #e7e9e5);
+  border-radius: 999px;
+
+  background: white;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.admin-profile:hover {
+  border-color: rgba(194, 151, 49, 0.4);
+
+  box-shadow: 0 5px 18px rgba(8, 39, 27, 0.06);
+}
+
+.admin-profile-avatar {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: var(--color-primary-dark, #08271b);
+  background: var(--color-accent, #c29731);
+
+  font-size: 0.75rem;
+  font-weight: 900;
+}
+
+.admin-profile-info {
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 0.1rem;
+}
+
+.admin-profile-info strong {
+  color: var(--color-primary-dark, #08271b);
+
+  font-size: 0.62rem;
+  font-weight: 800;
+}
+
+.admin-profile-info small {
+  color: var(--color-text-light, #9aa09c);
+
+  font-size: 0.5rem;
+}
+
+.admin-profile-arrow {
+  width: 13px;
+  height: 13px;
+
+  margin-right: 0.2rem;
+
+  color: var(--color-text-muted, #747b76);
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .admin-header {
+    padding: 1rem 1.25rem;
+  }
+
+  .admin-header-title p {
+    display: none;
+  }
+
+  .admin-profile-info {
+    display: none;
+  }
+
+  .admin-profile {
+    border: 0;
+    padding-right: 0.2rem;
+  }
+
+  .admin-profile-arrow {
+    display: none;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+  .admin-header {
+    min-height: 72px;
+
+    padding: 0.75rem 1rem;
+  }
+
+  .admin-mobile-menu {
+    display: flex;
+  }
+
+  .admin-header-title > span {
+    font-size: 0.45rem;
+  }
+
+  .admin-header-title h1 {
+    font-size: 1.25rem;
+  }
+
+  .admin-header-actions {
+    gap: 0.35rem;
+  }
+
+  .admin-header-icon {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 500px) {
+  .admin-header-title > span {
+    display: none;
+  }
+
+  .admin-header-title h1 {
+    font-size: 1.1rem;
+  }
+
+  .admin-header-actions .admin-header-icon:first-child {
+    display: none;
+  }
+}

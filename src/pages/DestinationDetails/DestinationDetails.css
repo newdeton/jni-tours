@@ -1,0 +1,556 @@
+.destination-details-page {
+  min-height: 100vh;
+  background: #f8f6f0;
+  color: #17251f;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.destination-details-hero {
+  position: relative;
+  min-height: 720px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  color: #fff;
+}
+
+.destination-details-hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.destination-details-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5, 19, 14, 0.88),
+      rgba(5, 19, 14, 0.52) 48%,
+      rgba(5, 19, 14, 0.18)
+    ),
+    linear-gradient(
+      0deg,
+      rgba(5, 19, 14, 0.88),
+      transparent 55%
+    );
+}
+
+.destination-details-hero .container {
+  position: relative;
+  width: min(1200px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.destination-details-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 150px 0 90px;
+}
+
+.destination-details-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 45px;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: 0.25s ease;
+}
+
+.destination-details-back:hover {
+  color: #fff;
+  transform: translateX(-4px);
+}
+
+.destination-details-eyebrow,
+.destination-section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+  color: #c9a54b;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.destination-details-location {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 14px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.95rem;
+}
+
+.destination-details-hero h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  line-height: 0.95;
+  font-weight: 500;
+  letter-spacing: -0.045em;
+}
+
+.destination-details-hero p {
+  max-width: 680px;
+  margin: 28px 0 35px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 1.08rem;
+  line-height: 1.8;
+}
+
+.destination-details-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.destination-details-book-button,
+.destination-details-tours-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 54px;
+  padding: 0 25px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: 0.25s ease;
+}
+
+.destination-details-book-button {
+  background: #c9a54b;
+  color: #142019;
+}
+
+.destination-details-book-button:hover {
+  background: #dfbd63;
+  transform: translateY(-2px);
+}
+
+.destination-details-tours-button {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.destination-details-tours-button:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+/* =========================================================
+   OVERVIEW
+   ========================================================= */
+
+.destination-details-overview {
+  padding: 110px 0;
+}
+
+.destination-details-overview .container {
+  width: min(1200px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.destination-details-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.65fr);
+  gap: 80px;
+  align-items: start;
+}
+
+.destination-details-main h2 {
+  max-width: 700px;
+  margin: 0 0 25px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.03;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+}
+
+.destination-details-main h2 em {
+  color: #b08b38;
+  font-style: italic;
+}
+
+.destination-details-main > p {
+  max-width: 720px;
+  margin: 0 0 20px;
+  color: #64736c;
+  font-size: 1.02rem;
+  line-height: 1.85;
+}
+
+/* =========================================================
+   HIGHLIGHTS
+   ========================================================= */
+
+.destination-highlights {
+  margin-top: 50px;
+}
+
+.destination-highlights > span {
+  display: block;
+  margin-bottom: 20px;
+  color: #17251f;
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+.destination-highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.destination-highlight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 62px;
+  padding: 14px 16px;
+  border: 1px solid rgba(23, 37, 31, 0.08);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.destination-highlight svg {
+  flex-shrink: 0;
+  color: #b08b38;
+}
+
+.destination-highlight span {
+  color: #4f5e57;
+  font-size: 0.92rem;
+}
+
+/* =========================================================
+   BOOKING CARD
+   ========================================================= */
+
+.destination-booking-card {
+  position: sticky;
+  top: 30px;
+  padding: 34px;
+  border: 1px solid rgba(23, 37, 31, 0.08);
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 25px 70px rgba(20, 35, 28, 0.08);
+}
+
+.destination-booking-card > span {
+  color: #b08b38;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.destination-booking-card h2 {
+  margin: 12px 0 28px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2rem;
+  line-height: 1.1;
+  font-weight: 500;
+}
+
+.destination-booking-card h2 em {
+  color: #b08b38;
+}
+
+.destination-booking-meta {
+  display: grid;
+  gap: 20px;
+}
+
+.destination-booking-meta > div {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+}
+
+.destination-booking-meta svg {
+  margin-top: 3px;
+  color: #b08b38;
+}
+
+.destination-booking-meta span {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.destination-booking-meta small {
+  color: #87928d;
+  font-size: 0.74rem;
+}
+
+.destination-booking-meta strong {
+  color: #17251f;
+  font-size: 0.9rem;
+}
+
+.destination-booking-card-divider {
+  height: 1px;
+  margin: 28px 0;
+  background: rgba(23, 37, 31, 0.08);
+}
+
+.destination-booking-card p {
+  margin: 0 0 25px;
+  color: #68766f;
+  line-height: 1.7;
+  font-size: 0.9rem;
+}
+
+.destination-booking-card-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 54px;
+  padding: 0 20px;
+  border-radius: 5px;
+  background: #17251f;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  transition: 0.25s ease;
+}
+
+.destination-booking-card-button:hover {
+  background: #b08b38;
+  color: #17251f;
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.destination-details-cta {
+  padding: 30px 0 100px;
+}
+
+.destination-details-cta .container {
+  width: min(1200px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.destination-details-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 55px;
+  border-radius: 12px;
+  background: #17251f;
+  color: #fff;
+}
+
+.destination-details-cta-inner > div > span {
+  color: #c9a54b;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.destination-details-cta h2 {
+  max-width: 700px;
+  margin: 12px 0 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.05;
+  font-weight: 500;
+}
+
+.destination-details-cta h2 em {
+  color: #c9a54b;
+}
+
+.destination-details-cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-width: 190px;
+  min-height: 54px;
+  padding: 0 22px;
+  border: 0;
+  border-radius: 5px;
+  background: #c9a54b;
+  color: #17251f;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 800;
+  transition: 0.25s ease;
+}
+
+.destination-details-cta-button:hover {
+  background: #dfbd63;
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   LOADING / NOT FOUND
+   ========================================================= */
+
+.destination-details-loading,
+.destination-details-not-found {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  text-align: center;
+}
+
+.destination-details-loading svg,
+.destination-details-not-found > svg {
+  margin-bottom: 20px;
+  color: #b08b38;
+  font-size: 3rem;
+}
+
+.destination-details-loading h1,
+.destination-details-not-found h1 {
+  margin: 0 0 12px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 500;
+}
+
+.destination-details-loading p,
+.destination-details-not-found p {
+  max-width: 500px;
+  margin: 0 0 25px;
+  color: #68766f;
+  line-height: 1.7;
+}
+
+.destination-details-not-found > span {
+  margin-bottom: 10px;
+  color: #b08b38;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.destination-back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 50px;
+  padding: 0 20px;
+  border-radius: 5px;
+  background: #17251f;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .destination-details-hero {
+    min-height: 650px;
+  }
+
+  .destination-details-grid {
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+
+  .destination-booking-card {
+    position: static;
+  }
+
+  .destination-details-cta-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 640px) {
+  .destination-details-hero .container,
+  .destination-details-overview .container,
+  .destination-details-cta .container {
+    width: min(100% - 28px, 1200px);
+  }
+
+  .destination-details-hero-content {
+    padding: 120px 0 65px;
+  }
+
+  .destination-details-back {
+    margin-bottom: 30px;
+  }
+
+  .destination-details-hero h1 {
+    font-size: clamp(3rem, 16vw, 5rem);
+  }
+
+  .destination-details-hero p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .destination-details-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .destination-details-book-button,
+  .destination-details-tours-button {
+    width: 100%;
+  }
+
+  .destination-details-overview {
+    padding: 75px 0;
+  }
+
+  .destination-details-main h2 {
+    font-size: 2.5rem;
+  }
+
+  .destination-highlights-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .destination-booking-card {
+    padding: 26px 22px;
+  }
+
+  .destination-details-cta {
+    padding-bottom: 65px;
+  }
+
+  .destination-details-cta-inner {
+    padding: 35px 25px;
+  }
+
+  .destination-details-cta h2 {
+    font-size: 2.25rem;
+  }
+
+  .destination-details-cta-button {
+    width: 100%;
+  }
+}

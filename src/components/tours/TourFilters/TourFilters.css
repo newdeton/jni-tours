@@ -1,0 +1,358 @@
+/* =========================================================
+   JNI TOURS — TOUR FILTERS
+   ========================================================= */
+
+.tour-filters {
+  position: sticky;
+
+  top: 110px;
+
+  padding: 1.4rem;
+
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+
+  background: var(--color-white);
+}
+
+/* =========================
+   HEADER
+   ========================= */
+
+.tour-filters-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  margin-bottom: 1.25rem;
+}
+
+.tour-filters-header span {
+  color: var(--color-accent-dark);
+
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.tour-filters-header h3 {
+  margin: 0.3rem 0 0;
+
+  color: var(--color-primary-dark);
+
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+.tour-filters-close {
+  display: none;
+}
+
+/* =========================
+   SEARCH
+   ========================= */
+
+.tour-filter-search {
+  display: flex;
+  align-items: center;
+
+  gap: 0.6rem;
+
+  height: 44px;
+
+  margin-bottom: 1.4rem;
+  padding: 0 0.8rem;
+
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+
+  background: var(--color-background);
+}
+
+.tour-filter-search svg {
+  flex-shrink: 0;
+
+  width: 15px;
+  height: 15px;
+
+  color: var(--color-text-light);
+}
+
+.tour-filter-search input {
+  width: 100%;
+
+  border: 0;
+  outline: 0;
+
+  color: var(--color-primary-dark);
+  background: transparent;
+
+  font-family: inherit;
+  font-size: 0.72rem;
+}
+
+.tour-filter-search input::placeholder {
+  color: var(--color-text-light);
+}
+
+/* =========================
+   GROUP
+   ========================= */
+
+.tour-filter-group {
+  margin-bottom: 1.2rem;
+}
+
+.tour-filter-group > label,
+.tour-filter-price-heading label {
+  display: block;
+
+  margin-bottom: 0.45rem;
+
+  color: var(--color-primary-dark);
+
+  font-size: 0.67rem;
+  font-weight: 800;
+}
+
+/* =========================
+   SELECT
+   ========================= */
+
+.tour-select {
+  position: relative;
+}
+
+.tour-select select {
+  width: 100%;
+  height: 42px;
+
+  appearance: none;
+
+  padding: 0 2rem 0 0.75rem;
+
+  border: 1px solid var(--color-border);
+  border-radius: 0.45rem;
+
+  outline: 0;
+
+  color: var(--color-text);
+
+  background: var(--color-white);
+
+  font-family: inherit;
+  font-size: 0.68rem;
+
+  cursor: pointer;
+}
+
+.tour-select svg {
+  position: absolute;
+
+  top: 50%;
+  right: 0.7rem;
+
+  width: 14px;
+  height: 14px;
+
+  pointer-events: none;
+
+  color: var(--color-text-light);
+
+  transform: translateY(-50%);
+}
+
+/* =========================
+   PRICE
+   ========================= */
+
+.tour-filter-price-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tour-filter-price-heading label {
+  margin-bottom: 0;
+}
+
+.tour-filter-price-heading strong {
+  color: var(--color-accent-dark);
+
+  font-size: 0.7rem;
+}
+
+.tour-price-range {
+  width: 100%;
+
+  margin-top: 0.8rem;
+
+  accent-color: var(--color-accent-dark);
+
+  cursor: pointer;
+}
+
+.tour-price-labels {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 0.3rem;
+
+  color: var(--color-text-light);
+
+  font-size: 0.56rem;
+}
+
+/* =========================
+   CLEAR
+   ========================= */
+
+.tour-clear-filters {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.45rem;
+
+  min-height: 40px;
+
+  margin-top: 0.4rem;
+
+  border: 1px solid var(--color-border);
+  border-radius: 0.45rem;
+
+  color: var(--color-text-muted);
+  background: transparent;
+
+  font-family: inherit;
+  font-size: 0.65rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    color var(--transition-base),
+    border-color var(--transition-base),
+    background var(--transition-base);
+}
+
+.tour-clear-filters:hover {
+  color: var(--color-primary-dark);
+
+  border-color: var(--color-primary);
+
+  background: var(--color-background);
+}
+
+.tour-clear-filters svg {
+  width: 13px;
+  height: 13px;
+}
+
+/* =========================
+   MOBILE BUTTON
+   ========================= */
+
+.mobile-filter-button {
+  display: none;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+  .mobile-filter-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.45rem;
+
+    min-height: 42px;
+
+    padding: 0 1rem;
+
+    border: 1px solid var(--color-border);
+    border-radius: 0.45rem;
+
+    color: var(--color-primary-dark);
+    background: var(--color-white);
+
+    font-family: inherit;
+    font-size: 0.68rem;
+    font-weight: 800;
+
+    cursor: pointer;
+  }
+
+  .mobile-filter-button svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .tour-filters {
+    position: fixed;
+
+    z-index: 1000;
+
+    top: 0;
+    left: 0;
+
+    width: min(90%, 380px);
+    height: 100vh;
+
+    overflow-y: auto;
+
+    border: 0;
+    border-radius: 0;
+
+    transform: translateX(-100%);
+
+    transition: transform 0.35s ease;
+  }
+
+  .tour-filters-open {
+    transform: translateX(0);
+  }
+
+  .tour-filters-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: 36px;
+
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+
+    color: var(--color-primary-dark);
+    background: var(--color-white);
+
+    cursor: pointer;
+  }
+
+  .tour-filters-close svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .tour-filters-backdrop {
+    position: fixed;
+
+    z-index: 999;
+
+    inset: 0;
+
+    border: 0;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    cursor: pointer;
+  }
+}

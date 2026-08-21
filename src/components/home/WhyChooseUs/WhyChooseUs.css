@@ -1,0 +1,287 @@
+/* =========================================================
+   JNI TOURS — WHY CHOOSE US
+   ========================================================= */
+
+.why-choose-us {
+  padding: 7rem 0;
+
+  background: var(--color-white);
+}
+
+/* =========================
+   LAYOUT
+   ========================= */
+
+.why-choose-layout {
+  display: grid;
+
+  grid-template-columns: 0.8fr 1.2fr;
+
+  gap: 6rem;
+
+  align-items: start;
+}
+
+/* =========================
+   INTRO
+   ========================= */
+
+.why-choose-intro {
+  position: sticky;
+
+  top: 120px;
+}
+
+.why-choose-eyebrow {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 0.45rem;
+
+  margin-bottom: 1rem;
+
+  color: var(--color-accent-dark);
+
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.why-choose-eyebrow svg {
+  width: 15px;
+  height: 15px;
+}
+
+.why-choose-intro h2 {
+  margin: 0;
+
+  color: var(--color-primary-dark);
+
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 4.5vw, 4rem);
+  font-weight: 600;
+  line-height: 0.98;
+}
+
+.why-choose-intro h2 em {
+  color: var(--color-accent-dark);
+
+  font-style: normal;
+}
+
+.why-choose-intro > p {
+  max-width: 470px;
+
+  margin: 1.5rem 0 0;
+
+  color: var(--color-text-muted);
+
+  font-size: 0.92rem;
+  line-height: 1.85;
+}
+
+/* =========================
+   STAT
+   ========================= */
+
+.why-choose-stat {
+  display: flex;
+  align-items: center;
+
+  gap: 1rem;
+
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+
+  border-top: 1px solid var(--color-border);
+}
+
+.why-choose-stat > strong {
+  color: var(--color-accent);
+
+  font-family: var(--font-display);
+  font-size: 3.2rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.why-choose-stat span {
+  display: block;
+
+  color: var(--color-primary-dark);
+
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.why-choose-stat p {
+  margin: 0.25rem 0 0;
+
+  color: var(--color-text-muted);
+
+  font-size: 0.7rem;
+}
+
+/* =========================
+   FEATURES
+   ========================= */
+
+.why-choose-features {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 1px;
+
+  overflow: hidden;
+
+  border: 1px solid var(--color-border);
+
+  background: var(--color-border);
+}
+
+.why-choose-feature {
+  min-height: 260px;
+
+  padding: 1.75rem;
+
+  background: var(--color-white);
+
+  transition:
+    background var(--transition-base),
+    transform var(--transition-base);
+}
+
+.why-choose-feature:hover {
+  background: #faf9f5;
+}
+
+/* =========================
+   FEATURE TOP
+   ========================= */
+
+.why-choose-feature-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 2.2rem;
+}
+
+.why-choose-number {
+  color: var(--color-text-light);
+
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.why-choose-icon {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: var(--color-accent-dark);
+  background: rgba(194, 151, 49, 0.1);
+
+  transition:
+    color var(--transition-base),
+    background var(--transition-base);
+}
+
+.why-choose-feature:hover .why-choose-icon {
+  color: var(--color-primary-dark);
+  background: var(--color-accent);
+}
+
+.why-choose-icon svg {
+  width: 19px;
+  height: 19px;
+}
+
+/* =========================
+   TEXT
+   ========================= */
+
+.why-choose-feature h3 {
+  margin: 0 0 0.7rem;
+
+  color: var(--color-primary-dark);
+
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.why-choose-feature p {
+  max-width: 330px;
+
+  margin: 0;
+
+  color: var(--color-text-muted);
+
+  font-size: 0.74rem;
+  line-height: 1.75;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+  .why-choose-us {
+    padding: 5.5rem 0;
+  }
+
+  .why-choose-layout {
+    grid-template-columns: 1fr;
+
+    gap: 3.5rem;
+  }
+
+  .why-choose-intro {
+    position: static;
+  }
+
+  .why-choose-intro > p {
+    max-width: 650px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .why-choose-us {
+    padding: 4rem 0;
+  }
+
+  .why-choose-intro h2 {
+    font-size: 2.4rem;
+  }
+
+  .why-choose-intro > p {
+    font-size: 0.84rem;
+  }
+
+  .why-choose-features {
+    grid-template-columns: 1fr;
+  }
+
+  .why-choose-feature {
+    min-height: auto;
+
+    padding: 1.4rem;
+  }
+
+  .why-choose-feature-top {
+    margin-bottom: 1.5rem;
+  }
+}

@@ -1,0 +1,143 @@
+/* =========================================================
+   JNI TOURS — DESIGN TOKENS
+   Premium International Travel Platform
+   ========================================================= */
+
+:root {
+  /* =========================
+     BRAND COLORS
+     ========================= */
+
+  --color-primary: #12372a;
+  --color-primary-dark: #0b241b;
+  --color-primary-light: #1d513d;
+
+  --color-secondary: #c89b3c;
+  --color-secondary-dark: #a77d27;
+  --color-secondary-light: #dfbb68;
+
+  --color-accent: #e8c878;
+
+  /* =========================
+     NEUTRALS
+     ========================= */
+
+  --color-white: #ffffff;
+  --color-black: #0b0f0d;
+
+  --color-heading: #16221c;
+  --color-text: #4f5d55;
+  --color-text-light: #718078;
+
+  --color-background: #ffffff;
+  --color-background-soft: #f6f7f4;
+  --color-background-dark: #0e1d16;
+
+  --color-border: #e4e8e5;
+  --color-border-dark: #cfd7d2;
+
+  /* =========================
+     STATUS COLORS
+     ========================= */
+
+  --color-success: #287a4b;
+  --color-warning: #b7791f;
+  --color-danger: #c0392b;
+  --color-info: #28749a;
+
+  /* =========================
+     TYPOGRAPHY
+     ========================= */
+
+  --font-primary: "Manrope", sans-serif;
+  --font-display: "Playfair Display", serif;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  /* =========================
+     FONT SIZES
+     ========================= */
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+  --text-7xl: 4.5rem;
+
+  /* =========================
+     SPACING
+     ========================= */
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* =========================
+     LAYOUT
+     ========================= */
+
+  --container-width: 1280px;
+  --container-wide: 1440px;
+  --container-narrow: 900px;
+
+  --section-padding: 6rem;
+  --section-padding-mobile: 4rem;
+
+  /* =========================
+     BORDER RADIUS
+     ========================= */
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 999px;
+
+  /* =========================
+     SHADOWS
+     ========================= */
+
+  --shadow-sm: 0 2px 8px rgba(18, 55, 42, 0.06);
+  --shadow-md: 0 8px 24px rgba(18, 55, 42, 0.08);
+  --shadow-lg: 0 18px 45px rgba(18, 55, 42, 0.12);
+  --shadow-xl: 0 30px 70px rgba(18, 55, 42, 0.16);
+
+  /* =========================
+     TRANSITIONS
+     ========================= */
+
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+  /* =========================
+     Z-INDEX
+     ========================= */
+
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-sticky: 500;
+  --z-overlay: 900;
+  --z-modal: 1000;
+  --z-toast: 1100;
+}

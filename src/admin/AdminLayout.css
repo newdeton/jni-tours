@@ -1,0 +1,70 @@
+/* =========================================================
+   JNI TOURS — ADMIN LAYOUT
+   ========================================================= */
+
+.admin-layout {
+  min-height: 100vh;
+
+  background: #f6f7f4;
+}
+
+/* =========================================================
+   MAIN AREA
+   ========================================================= */
+
+.admin-main {
+  min-height: 100vh;
+
+  margin-left: 250px;
+
+  transition: margin-left 0.25s ease;
+}
+
+.admin-main-collapsed {
+  margin-left: 76px;
+}
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.admin-content {
+  min-height: calc(100vh - 82px);
+
+  padding: 2rem;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .admin-main {
+    margin-left: 76px;
+  }
+
+  .admin-main-collapsed {
+    margin-left: 76px;
+  }
+
+  .admin-content {
+    padding: 1.5rem;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+  .admin-main,
+  .admin-main-collapsed {
+    margin-left: 0;
+  }
+
+  .admin-content {
+    min-height: calc(100vh - 72px);
+
+    padding: 1rem;
+  }
+}

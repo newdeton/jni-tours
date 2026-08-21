@@ -1,0 +1,513 @@
+/* =========================================================
+   JNI TOURS — ABOUT PAGE
+   ========================================================= */
+
+.about-page {
+  background: var(--color-background);
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.about-hero {
+  position: relative;
+
+  padding: 9rem 0 6rem;
+
+  overflow: hidden;
+
+  color: var(--color-white);
+
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(194, 151, 49, 0.14),
+      transparent 30%
+    ),
+    var(--color-primary-dark);
+}
+
+.about-hero-content {
+  max-width: 720px;
+}
+
+.about-hero-content > span {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 0.45rem;
+
+  margin-bottom: 1rem;
+
+  color: var(--color-accent);
+
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.about-hero-content > span svg {
+  width: 15px;
+  height: 15px;
+}
+
+.about-hero-content h1 {
+  margin: 0;
+
+  color: var(--color-white);
+
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 600;
+  line-height: 0.95;
+}
+
+.about-hero-content h1 em {
+  color: var(--color-accent);
+  font-style: normal;
+}
+
+.about-hero-content p {
+  max-width: 580px;
+
+  margin: 1.5rem 0 0;
+
+  color: rgba(255, 255, 255, 0.64);
+
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   STORY
+   ========================================================= */
+
+.about-story {
+  padding: 7rem 0;
+
+  background: var(--color-background);
+}
+
+.about-story-grid {
+  display: grid;
+
+  grid-template-columns: 0.85fr 1.15fr;
+
+  gap: 6rem;
+
+  align-items: start;
+}
+
+.about-story-heading > span,
+.about-section-heading > span,
+.about-destinations > span,
+.about-why-heading > span,
+.about-cta-content > span {
+  display: block;
+
+  margin-bottom: 0.8rem;
+
+  color: var(--color-accent-dark);
+
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.about-story-heading h2,
+.about-section-heading h2,
+.about-destinations h2,
+.about-why-heading h2,
+.about-cta h2 {
+  margin: 0;
+
+  color: var(--color-primary-dark);
+
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4vw, 3.7rem);
+  font-weight: 600;
+  line-height: 1.05;
+}
+
+.about-story-heading h2 em,
+.about-section-heading h2 em,
+.about-destinations h2 em,
+.about-why-heading h2 em,
+.about-cta h2 em {
+  color: var(--color-accent-dark);
+
+  font-style: normal;
+}
+
+.about-story-content {
+  max-width: 650px;
+}
+
+.about-story-content p {
+  margin: 0 0 1.2rem;
+
+  color: var(--color-text-muted);
+
+  font-size: 0.85rem;
+  line-height: 1.9;
+}
+
+.about-story-content .about-lead {
+  margin-bottom: 1.5rem;
+
+  color: var(--color-primary-dark);
+
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   VALUES
+   ========================================================= */
+
+.about-values {
+  padding: 7rem 0;
+
+  background: var(--color-white);
+}
+
+.about-section-heading {
+  max-width: 650px;
+
+  margin-bottom: 3.5rem;
+}
+
+.about-section-heading p {
+  max-width: 520px;
+
+  margin: 1.2rem 0 0;
+
+  color: var(--color-text-muted);
+
+  font-size: 0.82rem;
+  line-height: 1.8;
+}
+
+.about-values-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 1rem;
+}
+
+.about-values-grid article {
+  padding: 2rem 1.5rem;
+
+  border: 1px solid var(--color-border);
+  border-radius: 0.9rem;
+
+  background: var(--color-background);
+
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.about-values-grid article:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 18px 40px rgba(10, 35, 24, 0.08);
+}
+
+.about-values-grid article > svg {
+  width: 24px;
+  height: 24px;
+
+  margin-bottom: 2rem;
+
+  color: var(--color-accent-dark);
+}
+
+.about-values-grid h3 {
+  margin: 0 0 0.7rem;
+
+  color: var(--color-primary-dark);
+
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+}
+
+.about-values-grid p {
+  margin: 0;
+
+  color: var(--color-text-muted);
+
+  font-size: 0.72rem;
+  line-height: 1.75;
+}
+
+/* =========================================================
+   DESTINATIONS
+   ========================================================= */
+
+.about-destinations {
+  padding: 7rem 0;
+
+  color: var(--color-white);
+
+  background: var(--color-primary-dark);
+}
+
+.about-destinations-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 0.8fr;
+
+  gap: 6rem;
+
+  align-items: center;
+}
+
+.about-destinations h2 {
+  color: var(--color-white);
+}
+
+.about-destinations h2 em {
+  color: var(--color-accent);
+}
+
+.about-destinations p {
+  max-width: 500px;
+
+  margin: 1.2rem 0 1.8rem;
+
+  color: rgba(255, 255, 255, 0.62);
+
+  font-size: 0.82rem;
+  line-height: 1.8;
+}
+
+.about-destinations a,
+.about-cta a {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 0.6rem;
+
+  min-height: 42px;
+
+  padding: 0 1.1rem;
+
+  border-radius: 0.4rem;
+
+  color: var(--color-primary-dark);
+  background: var(--color-accent);
+
+  font-size: 0.65rem;
+  font-weight: 800;
+
+  text-decoration: none;
+}
+
+.about-destination-list {
+  display: grid;
+
+  gap: 0.75rem;
+}
+
+.about-destination-list > div {
+  display: grid;
+
+  grid-template-columns: 25px 1fr auto;
+
+  gap: 0.8rem;
+
+  align-items: center;
+
+  padding: 1.2rem;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+}
+
+.about-destination-list svg {
+  color: var(--color-accent);
+}
+
+.about-destination-list strong {
+  font-size: 0.75rem;
+}
+
+.about-destination-list span {
+  color: rgba(255, 255, 255, 0.45);
+
+  font-size: 0.6rem;
+}
+
+/* =========================================================
+   WHY JNI
+   ========================================================= */
+
+.about-why {
+  padding: 7rem 0;
+
+  background: var(--color-background);
+}
+
+.about-why-heading {
+  margin-bottom: 3.5rem;
+}
+
+.about-why-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 2rem;
+}
+
+.about-why-grid article {
+  padding-top: 1.3rem;
+
+  border-top: 1px solid var(--color-border);
+}
+
+.about-why-grid strong {
+  color: var(--color-accent-dark);
+
+  font-size: 0.62rem;
+}
+
+.about-why-grid h3 {
+  margin: 1.2rem 0 0.7rem;
+
+  color: var(--color-primary-dark);
+
+  font-family: var(--font-display);
+  font-size: 1rem;
+}
+
+.about-why-grid p {
+  margin: 0;
+
+  color: var(--color-text-muted);
+
+  font-size: 0.72rem;
+  line-height: 1.75;
+}
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.about-cta {
+  padding: 7rem 0;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at 15% 80%,
+      rgba(194, 151, 49, 0.12),
+      transparent 30%
+    ),
+    var(--color-primary-dark);
+}
+
+.about-cta-content {
+  max-width: 700px;
+
+  margin: 0 auto;
+}
+
+.about-cta-content > span {
+  color: var(--color-accent);
+}
+
+.about-cta h2 {
+  color: var(--color-white);
+}
+
+.about-cta h2 em {
+  color: var(--color-accent);
+}
+
+.about-cta p {
+  max-width: 520px;
+
+  margin: 1.2rem auto 1.8rem;
+
+  color: rgba(255, 255, 255, 0.6);
+
+  font-size: 0.82rem;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+  .about-story-grid,
+  .about-destinations-grid {
+    grid-template-columns: 1fr;
+
+    gap: 3.5rem;
+  }
+
+  .about-values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-why-grid {
+    grid-template-columns: 1fr;
+
+    gap: 2rem;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+  .about-hero {
+    padding: 7rem 0 4.5rem;
+  }
+
+  .about-story,
+  .about-values,
+  .about-destinations,
+  .about-why,
+  .about-cta {
+    padding: 5rem 0;
+  }
+
+  .about-story-grid,
+  .about-destinations-grid {
+    gap: 2.5rem;
+  }
+
+  .about-values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-destination-list > div {
+    grid-template-columns: 25px 1fr;
+  }
+
+  .about-destination-list span {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 500px) {
+  .about-hero-content h1 {
+    font-size: 3rem;
+  }
+
+  .about-hero-content p {
+    font-size: 0.8rem;
+  }
+}

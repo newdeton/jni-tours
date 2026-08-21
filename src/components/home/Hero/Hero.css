@@ -1,0 +1,312 @@
+/* =========================================================
+   JNI TOURS — CINEMATIC HERO
+   5-SLIDE EXPERIENCE
+   ========================================================= */
+
+.hero {
+  position: relative;
+
+  min-height: calc(100vh - 82px);
+  min-height: 720px;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  color: var(--color-white);
+  background: var(--color-primary-dark);
+}
+
+/* =========================
+   BACKGROUND
+   ========================= */
+
+.hero-background {
+  position: absolute;
+  inset: 0;
+
+  z-index: 0;
+}
+
+.hero-background img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+/* =========================
+   OVERLAY
+   ========================= */
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5, 20, 14, 0.88) 0%,
+      rgba(5, 20, 14, 0.65) 38%,
+      rgba(5, 20, 14, 0.25) 72%,
+      rgba(5, 20, 14, 0.12) 100%
+    );
+}
+
+/* =========================
+   CONTAINER
+   ========================= */
+
+.hero-container {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(
+    calc(100% - 3rem),
+    var(--container-wide)
+  );
+
+  min-height: 720px;
+
+  margin-inline: auto;
+
+  display: flex;
+  align-items: center;
+
+  padding: 6rem 0 8rem;
+}
+
+/* =========================
+   CONTENT
+   ========================= */
+
+.hero-content {
+  position: relative;
+
+  width: min(720px, 100%);
+}
+
+.hero-content-right {
+  margin-left: auto;
+}
+
+.hero-content-center {
+  margin-inline: auto;
+
+  text-align: center;
+}
+
+.hero-content-bottom {
+  align-self: flex-end;
+}
+
+.hero-content-bottom-right {
+  margin-left: auto;
+  align-self: flex-end;
+}
+
+/* =========================
+   EYEBROW
+   ========================= */
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+
+  margin-bottom: 1.35rem;
+  padding: 0.5rem 0.85rem;
+
+  border: 1px solid rgba(232, 200, 120, 0.45);
+  border-radius: var(--radius-full);
+
+  color: var(--color-accent);
+
+  background: rgba(255, 255, 255, 0.06);
+
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  backdrop-filter: blur(10px);
+}
+
+/* =========================
+   HEADING
+   ========================= */
+
+.hero h1 {
+  max-width: 750px;
+
+  margin-bottom: 1.4rem;
+
+  color: var(--color-white);
+
+  font-family: var(--font-display);
+  font-size: clamp(3.3rem, 6vw, 5.8rem);
+  font-weight: 600;
+  line-height: 0.98;
+
+  letter-spacing: -0.04em;
+}
+
+.hero h1 span {
+  display: block;
+
+  color: var(--color-accent);
+}
+
+/* =========================
+   DESCRIPTION
+   ========================= */
+
+.hero-content > p {
+  max-width: 620px;
+
+  margin-bottom: 2rem;
+
+  color: rgba(255, 255, 255, 0.82);
+
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.hero-content-center > p {
+  margin-inline: auto;
+}
+
+/* =========================
+   ACTIONS
+   ========================= */
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 0.85rem;
+}
+
+.hero-content-center .hero-actions {
+  justify-content: center;
+}
+
+.hero-primary-button,
+.hero-secondary-button {
+  min-height: 52px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.6rem;
+
+  padding: 0.8rem 1.25rem;
+
+  border-radius: var(--radius-full);
+
+  font-size: 0.84rem;
+  font-weight: 800;
+
+  transition:
+    transform var(--transition-base),
+    background var(--transition-base),
+    border-color var(--transition-base);
+}
+
+.hero-primary-button {
+  color: var(--color-primary-dark);
+  background: var(--color-accent);
+}
+
+.hero-primary-button:hover {
+  background: var(--color-white);
+  transform: translateY(-3px);
+}
+
+.hero-primary-button svg {
+  transition: transform var(--transition-base);
+}
+
+.hero-primary-button:hover svg {
+  transform: translateX(4px);
+}
+
+.hero-secondary-button {
+  color: var(--color-white);
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  background: rgba(255, 255, 255, 0.07);
+
+  backdrop-filter: blur(10px);
+}
+
+.hero-secondary-button:hover {
+  border-color: rgba(255, 255, 255, 0.7);
+
+  background: rgba(255, 255, 255, 0.14);
+
+  transform: translateY(-3px);
+}
+
+/* =========================
+   SLIDE PROGRESS
+   ========================= */
+
+.hero-progress {
+  position: absolute;
+
+  left: 0;
+  bottom: 2rem;
+
+  display: flex;
+  gap: 0.5rem;
+
+  z-index: 5;
+}
+
+.hero-progress-item {
+  display: block;
+
+  width: 55px;
+  height: 3px;
+
+  background: rgba(255, 255, 255, 0.3);
+
+  overflow: hidden;
+}
+
+.hero-progress-item.active {
+  position: relative;
+}
+
+.hero-progress-item.active::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: var(--color-accent);
+
+  transform-origin: left;
+
+  animation: heroSlideProgress 4s linear forwards;
+}
+
+@keyframes heroSlideProgress {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}

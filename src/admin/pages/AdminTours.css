@@ -1,0 +1,999 @@
+/* =========================================================
+   JNI TOURS — ADMIN TOURS
+   ========================================================= */
+
+.admin-tours {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   PAGE HEADING
+   ========================================================= */
+
+.admin-page-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.admin-page-heading > div > span {
+  display: block;
+  margin-bottom: 0.4rem;
+  color: #73806f;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.admin-page-heading h1 {
+  margin: 0;
+  color: #17251d;
+  font-size: 2rem;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+.admin-page-heading p {
+  margin: 0.55rem 0 0;
+  color: #737c76;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   ADD BUTTON
+   ========================================================= */
+
+.admin-add-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 40px;
+  padding: 0.75rem 1rem;
+  border: 0;
+  border-radius: 10px;
+  background: #173a2b;
+  color: #fff;
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.admin-add-button:hover {
+  background: #24523d;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(23, 58, 43, 0.14);
+}
+
+.admin-add-button svg {
+  font-size: 1rem;
+}
+
+/* =========================================================
+   SUMMARY
+   ========================================================= */
+
+.admin-tour-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.admin-tour-summary > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid #e2e7e1;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.admin-tour-summary strong {
+  color: #173a2b;
+  font-size: 1.35rem;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.admin-tour-summary span {
+  color: #7b857e;
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+
+/* =========================================================
+   TOOLBAR
+   ========================================================= */
+
+.admin-tours-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 1rem;
+  padding: 0.85rem;
+  border: 1px solid #e2e7e1;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.admin-search {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex: 1;
+  min-width: 220px;
+  padding: 0 0.7rem;
+  border: 1px solid #e2e7e1;
+  border-radius: 8px;
+  color: #89928b;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.admin-search:focus-within {
+  border-color: #9eafa3;
+  box-shadow: 0 0 0 3px rgba(66, 103, 78, 0.06);
+}
+
+.admin-search svg {
+  flex-shrink: 0;
+}
+
+.admin-search input {
+  width: 100%;
+  padding: 0.65rem 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #26332b;
+  font: inherit;
+  font-size: 0.78rem;
+}
+
+.admin-search input::placeholder {
+  color: #a1a9a3;
+}
+
+.admin-tours-toolbar select {
+  min-width: 150px;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #e2e7e1;
+  border-radius: 8px;
+  background: #fff;
+  color: #56635a;
+  font: inherit;
+  font-size: 0.75rem;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.admin-tours-toolbar select:focus {
+  border-color: #9eafa3;
+  box-shadow: 0 0 0 3px rgba(66, 103, 78, 0.06);
+}
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.admin-tours-table-wrapper {
+  overflow-x: auto;
+  border: 1px solid #e2e7e1;
+  border-radius: 14px;
+  background: #fff;
+  -webkit-overflow-scrolling: touch;
+}
+
+.admin-tours-table {
+  width: 100%;
+  min-width: 1100px;
+  border-collapse: collapse;
+}
+
+.admin-tours-table th {
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid #e8ece7;
+  background: #fafbf9;
+  color: #7b857e;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-align: left;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.admin-tours-table td {
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid #edf0ec;
+  color: #657068;
+  font-size: 0.75rem;
+  vertical-align: middle;
+}
+
+.admin-tours-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.admin-tours-table tbody tr {
+  transition: background 0.15s ease;
+}
+
+.admin-tours-table tbody tr:hover {
+  background: #fbfcfa;
+}
+
+/* =========================================================
+   TOUR NAME
+   ========================================================= */
+
+.admin-tour-name {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 270px;
+}
+
+.admin-tour-name img {
+  width: 52px;
+  height: 42px;
+  flex: 0 0 52px;
+  border-radius: 7px;
+  object-fit: cover;
+  background: #eef1ed;
+}
+
+.admin-tour-name strong,
+.admin-tour-name span {
+  display: block;
+}
+
+.admin-tour-name strong {
+  color: #26332b;
+  font-size: 0.76rem;
+  line-height: 1.35;
+}
+
+.admin-tour-name span {
+  margin-top: 0.25rem;
+  color: #9aa19c;
+  font-size: 0.63rem;
+}
+
+/* =========================================================
+   CATEGORY
+   ========================================================= */
+
+.admin-tour-category {
+  display: inline-block;
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+  background: #f0f3ef;
+  color: #53655a;
+  font-size: 0.63rem;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   SOURCE
+   ========================================================= */
+
+.admin-tour-source {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+  font-size: 0.62rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.admin-tour-source.built-in {
+  background: #f1f3f2;
+  color: #737d76;
+}
+
+.admin-tour-source.admin-added {
+  background: #edf5ef;
+  color: #397247;
+}
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.admin-tour-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: #397247;
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.admin-tour-status::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  flex: 0 0 6px;
+  border-radius: 50%;
+  background: #4b985d;
+}
+
+/* Optional status variants for future DB status support */
+
+.admin-tour-status.draft {
+  color: #9a741f;
+}
+
+.admin-tour-status.draft::before {
+  background: #c89a32;
+}
+
+.admin-tour-status.archived {
+  color: #7d8580;
+}
+
+.admin-tour-status.archived::before {
+  background: #9aa19c;
+}
+
+/* =========================================================
+   ACTIONS
+   ========================================================= */
+
+.admin-tour-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.35rem;
+}
+
+.admin-tour-actions a,
+.admin-tour-actions button {
+  display: grid;
+  place-items: center;
+  width: 31px;
+  height: 31px;
+  padding: 0;
+  border: 1px solid #e4e8e3;
+  border-radius: 7px;
+  background: #fff;
+  color: #647168;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.admin-tour-actions a:hover,
+.admin-tour-actions button:hover:not(:disabled) {
+  border-color: #cbd7cc;
+  background: #f5f8f5;
+  color: #294d37;
+  transform: translateY(-1px);
+}
+
+.admin-tour-actions button.delete:hover:not(:disabled) {
+  border-color: #efd1d1;
+  background: #fff6f6;
+  color: #b54848;
+}
+
+/* =========================================================
+   DISABLED ACTIONS
+   ========================================================= */
+
+.admin-tour-actions button.disabled,
+.admin-tour-actions button:disabled {
+  opacity: 0.3;
+  background: #f7f8f7;
+  color: #89918b;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.admin-tour-actions button.disabled:hover,
+.admin-tour-actions button:disabled:hover {
+  border-color: #e4e8e3;
+  background: #f7f8f7;
+  color: #89918b;
+}
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.admin-tours-empty {
+  height: 220px;
+  text-align: center !important;
+}
+
+.admin-tours-empty svg {
+  display: block;
+  margin: 0 auto 0.7rem;
+  color: #9ca79f;
+  font-size: 1.4rem;
+}
+
+.admin-tours-empty strong,
+.admin-tours-empty span {
+  display: block;
+}
+
+.admin-tours-empty strong {
+  margin-bottom: 0.3rem;
+  color: #35443a;
+  font-size: 0.8rem;
+}
+
+.admin-tours-empty span {
+  color: #929b95;
+  font-size: 0.7rem;
+}
+
+/* =========================================================
+   MODAL OVERLAY
+   ========================================================= */
+
+.admin-tour-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(15, 28, 21, 0.48);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.admin-tour-modal {
+  width: 100%;
+  max-width: 720px;
+  max-height: calc(100vh - 3rem);
+  overflow-y: auto;
+  border: 1px solid #e1e6e1;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow:
+    0 24px 70px rgba(20, 40, 29, 0.18),
+    0 4px 15px rgba(20, 40, 29, 0.08);
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5cd transparent;
+}
+
+.admin-tour-modal::-webkit-scrollbar {
+  width: 7px;
+}
+
+.admin-tour-modal::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.admin-tour-modal::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background: #cbd5cd;
+}
+
+/* =========================================================
+   MODAL HEADER
+   ========================================================= */
+
+.admin-tour-modal-header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.3rem 1.4rem;
+  border-bottom: 1px solid #edf0ec;
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.admin-tour-modal-header span {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: #73806f;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.admin-tour-modal-header h2 {
+  margin: 0;
+  color: #17251d;
+  font-size: 1.3rem;
+  letter-spacing: -0.03em;
+}
+
+.admin-tour-modal-header > button {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  padding: 0;
+  border: 1px solid #e1e6e1;
+  border-radius: 8px;
+  background: #fff;
+  color: #68746c;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.admin-tour-modal-header > button:hover {
+  border-color: #d2dbd3;
+  background: #f5f7f5;
+  color: #263d30;
+}
+
+/* =========================================================
+   TOUR FORM
+   ========================================================= */
+
+.admin-tour-form {
+  padding: 1.4rem;
+}
+
+.admin-form-section {
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #edf0ec;
+}
+
+.admin-form-section:last-of-type {
+  margin-bottom: 0;
+}
+
+.admin-form-section-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.admin-form-section-heading h3 {
+  margin: 0;
+  color: #26332b;
+  font-size: 0.85rem;
+}
+
+.admin-form-section-heading span {
+  display: block;
+  margin-top: 0.25rem;
+  color: #929b95;
+  font-size: 0.68rem;
+  line-height: 1.5;
+}
+
+.admin-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.admin-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.admin-form-field.full {
+  grid-column: 1 / -1;
+}
+
+.admin-form-field > span {
+  color: #536158;
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.admin-form-field input,
+.admin-form-field select,
+.admin-form-field textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.7rem 0.75rem;
+  border: 1px solid #dfe5df;
+  border-radius: 8px;
+  background: #fff;
+  color: #26332b;
+  font: inherit;
+  font-size: 0.75rem;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.admin-form-field textarea {
+  min-height: 90px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.admin-form-field input:hover,
+.admin-form-field select:hover,
+.admin-form-field textarea:hover {
+  border-color: #cbd5cc;
+}
+
+.admin-form-field input:focus,
+.admin-form-field select:focus,
+.admin-form-field textarea:focus {
+  border-color: #718f7b;
+  box-shadow: 0 0 0 3px rgba(66, 103, 78, 0.08);
+}
+
+.admin-form-field input::placeholder,
+.admin-form-field textarea::placeholder {
+  color: #a3aaa5;
+}
+
+/* =========================================================
+   NUMBER INPUT
+   ========================================================= */
+
+.admin-form-field input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.admin-form-field input[type="number"]::-webkit-inner-spin-button,
+.admin-form-field input[type="number"]::-webkit-outer-spin-button {
+  margin: 0;
+  appearance: none;
+}
+
+/* =========================================================
+   ITINERARY EDITOR
+   ========================================================= */
+
+.admin-itinerary-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.admin-itinerary-item {
+  padding: 1rem;
+  border: 1px solid #e3e8e3;
+  border-radius: 10px;
+  background: #fafbf9;
+}
+
+.admin-itinerary-item-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.7rem;
+}
+
+.admin-itinerary-item-top strong {
+  color: #294333;
+  font-size: 0.72rem;
+}
+
+.admin-itinerary-item-top button {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid #eadede;
+  border-radius: 6px;
+  background: #fff;
+  color: #9b6262;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.admin-itinerary-item-top button:hover {
+  border-color: #e7caca;
+  background: #fff6f6;
+  color: #b54848;
+}
+
+.admin-itinerary-item input,
+.admin-itinerary-item textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #dfe5df;
+  border-radius: 7px;
+  background: #fff;
+  color: #26332b;
+  font: inherit;
+  font-size: 0.74rem;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.admin-itinerary-item input {
+  margin-bottom: 0.65rem;
+  padding: 0.65rem 0.7rem;
+}
+
+.admin-itinerary-item textarea {
+  min-height: 80px;
+  padding: 0.65rem 0.7rem;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+.admin-itinerary-item input:focus,
+.admin-itinerary-item textarea:focus {
+  border-color: #718f7b;
+  box-shadow: 0 0 0 3px rgba(66, 103, 78, 0.06);
+}
+
+/* =========================================================
+   INLINE BUTTON
+   ========================================================= */
+
+.admin-inline-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.5rem 0.7rem;
+  border: 1px solid #d8e1da;
+  border-radius: 7px;
+  background: #f5f8f5;
+  color: #31563e;
+  font: inherit;
+  font-size: 0.68rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.admin-inline-button:hover {
+  border-color: #bfcfc2;
+  background: #edf4ee;
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   FORM ACTIONS
+   ========================================================= */
+
+.admin-tour-form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.65rem;
+  padding-top: 1rem;
+}
+
+.admin-form-cancel,
+.admin-form-submit {
+  min-height: 38px;
+  padding: 0.65rem 1rem;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 0.74rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.admin-form-cancel {
+  border: 1px solid #dfe5df;
+  background: #fff;
+  color: #68746c;
+}
+
+.admin-form-cancel:hover {
+  background: #f6f8f6;
+  border-color: #ccd6ce;
+}
+
+.admin-form-submit {
+  border: 1px solid #173a2b;
+  background: #173a2b;
+  color: #fff;
+}
+
+.admin-form-submit:hover {
+  border-color: #24523d;
+  background: #24523d;
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   FOCUS ACCESSIBILITY
+   ========================================================= */
+
+.admin-add-button:focus-visible,
+.admin-tour-actions a:focus-visible,
+.admin-tour-actions button:focus-visible,
+.admin-tour-modal-header > button:focus-visible,
+.admin-inline-button:focus-visible,
+.admin-form-cancel:focus-visible,
+.admin-form-submit:focus-visible {
+  outline: 3px solid rgba(66, 103, 78, 0.18);
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .admin-page-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .admin-tour-summary {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .admin-page-heading {
+    gap: 1rem;
+  }
+
+  .admin-page-heading h1 {
+    font-size: 1.65rem;
+  }
+
+  .admin-add-button {
+    width: 100%;
+  }
+
+  .admin-tour-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-tours-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .admin-search {
+    min-width: 0;
+  }
+
+  .admin-tours-toolbar select {
+    width: 100%;
+  }
+
+  .admin-tour-modal-overlay {
+    align-items: flex-start;
+    padding: 0.75rem;
+  }
+
+  .admin-tour-modal {
+    max-height: calc(100vh - 1.5rem);
+    border-radius: 13px;
+  }
+
+  .admin-tour-form {
+    padding: 1rem;
+  }
+
+  .admin-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-form-field.full {
+    grid-column: auto;
+  }
+
+  .admin-form-section-heading {
+    flex-direction: column;
+  }
+
+  .admin-inline-button {
+    width: 100%;
+  }
+
+  .admin-tour-form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .admin-form-cancel,
+  .admin-form-submit {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 420px) {
+  .admin-page-heading h1 {
+    font-size: 1.45rem;
+  }
+
+  .admin-page-heading p {
+    font-size: 0.78rem;
+  }
+
+  .admin-tour-summary > div {
+    padding: 0.9rem;
+  }
+
+  .admin-tour-modal-overlay {
+    padding: 0.45rem;
+  }
+
+  .admin-tour-modal {
+    max-height: calc(100vh - 0.9rem);
+    border-radius: 11px;
+  }
+
+  .admin-tour-modal-header {
+    padding: 1rem;
+  }
+
+  .admin-tour-form {
+    padding: 0.85rem;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .admin-add-button,
+  .admin-tour-actions a,
+  .admin-tour-actions button,
+  .admin-inline-button,
+  .admin-form-cancel,
+  .admin-form-submit {
+    transition: none;
+  }
+}

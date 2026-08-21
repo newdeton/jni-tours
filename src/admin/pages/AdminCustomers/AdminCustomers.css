@@ -1,0 +1,1148 @@
+/* =========================================================
+   JNI TOURS — ADMIN CUSTOMERS
+   PREMIUM ADMIN CUSTOMER MANAGEMENT
+   ========================================================= */
+
+.admin-customers-page {
+  width: 100%;
+  min-height: 100%;
+  padding: 32px;
+  background:
+    radial-gradient(
+      circle at 92% 0%,
+      rgba(182, 138, 44, 0.055),
+      transparent 28%
+    ),
+    linear-gradient(
+      180deg,
+      #f8faf7 0%,
+      #f5f7f4 100%
+    );
+  color: #17211b;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.admin-customers-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 28px;
+  margin-bottom: 26px;
+}
+
+.admin-customers-header > div:first-child {
+  min-width: 0;
+}
+
+.admin-customers-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 9px;
+  color: #9a7428;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.admin-customers-eyebrow svg {
+  width: 15px;
+  height: 15px;
+}
+
+.admin-customers-header h1 {
+  margin: 0;
+  color: #14231a;
+  font-size: clamp(1.75rem, 3vw, 2.35rem);
+  font-weight: 750;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+}
+
+.admin-customers-header p {
+  max-width: 650px;
+  margin: 10px 0 0;
+  color: #7a857d;
+  font-size: 0.91rem;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   CUSTOMER COUNT
+   ========================================================= */
+
+.admin-customers-count {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 145px;
+  padding: 14px 17px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid #e2e8e1;
+  border-radius: 13px;
+  box-shadow:
+    0 8px 24px rgba(22, 45, 31, 0.045),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.admin-customers-count::before {
+  content: "";
+  width: 4px;
+  height: 31px;
+  flex-shrink: 0;
+  border-radius: 999px;
+  background: #b68a2c;
+}
+
+.admin-customers-count strong {
+  display: block;
+  color: #17291e;
+  font-size: 1.12rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.admin-customers-count span {
+  display: block;
+  margin-top: 3px;
+  color: #77827a;
+  font-size: 0.73rem;
+  font-weight: 650;
+}
+
+/* =========================================================
+   ALERTS
+   ========================================================= */
+
+.admin-customers-alert {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  padding: 13px 15px;
+  border-radius: 11px;
+  font-size: 0.83rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.admin-customers-alert.error {
+  border: 1px solid #efcccc;
+  background: #fff7f7;
+  color: #a33f3f;
+}
+
+.admin-customers-alert.success {
+  border: 1px solid #cce5d3;
+  background: #f4fbf6;
+  color: #287342;
+}
+
+/* =========================================================
+   MAIN CUSTOMER CARD
+   ========================================================= */
+
+.admin-customers-card,
+.admin-customers-table-card {
+  width: 100%;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #e1e7e1;
+  border-radius: 17px;
+  box-shadow:
+    0 12px 35px rgba(22, 45, 31, 0.045),
+    0 2px 8px rgba(22, 45, 31, 0.025);
+}
+
+/* =========================================================
+   TABLE WRAPPER
+   ========================================================= */
+
+.admin-customers-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #cbd4cc transparent;
+}
+
+.admin-customers-table-wrapper::-webkit-scrollbar {
+  height: 7px;
+}
+
+.admin-customers-table-wrapper::-webkit-scrollbar-track {
+  background: #f4f6f4;
+}
+
+.admin-customers-table-wrapper::-webkit-scrollbar-thumb {
+  background: #cbd4cc;
+  border-radius: 999px;
+}
+
+.admin-customers-table {
+  width: 100%;
+  min-width: 980px;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* =========================================================
+   TABLE HEADER
+   ========================================================= */
+
+.admin-customers-table thead {
+  background:
+    linear-gradient(
+      180deg,
+      #f8faf8 0%,
+      #f5f8f5 100%
+    );
+}
+
+.admin-customers-table th {
+  height: 54px;
+  padding: 0 18px;
+  border-bottom: 1px solid #e4e9e4;
+  color: #68746b;
+  font-size: 0.69rem;
+  font-weight: 800;
+  letter-spacing: 0.075em;
+  text-align: left;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.admin-customers-table th:last-child {
+  text-align: right;
+}
+
+/* =========================================================
+   TABLE BODY
+   ========================================================= */
+
+.admin-customers-table td {
+  padding: 17px 18px;
+  border-bottom: 1px solid #edf1ed;
+  color: #344239;
+  font-size: 0.84rem;
+  vertical-align: middle;
+}
+
+.admin-customers-table tbody tr {
+  background: #ffffff;
+  transition:
+    background 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.admin-customers-table tbody tr:hover {
+  background: #fbfcfb;
+}
+
+.admin-customers-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-customers-table td:last-child {
+  text-align: right;
+}
+
+/* =========================================================
+   CUSTOMER INFO
+   Matches current JSX:
+   .admin-customer-info
+   ========================================================= */
+
+.admin-customer-info,
+.admin-customer-identity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 220px;
+}
+
+.admin-customer-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  overflow: hidden;
+  border: 2px solid #edf2ed;
+  border-radius: 50%;
+  background:
+    linear-gradient(
+      135deg,
+      #173b27 0%,
+      #2f5b3d 100%
+    );
+  color: #ffffff;
+  font-size: 0.86rem;
+  box-shadow: 0 3px 10px rgba(23, 59, 39, 0.13);
+}
+
+.admin-customer-avatar svg {
+  width: 18px;
+  height: 18px;
+}
+
+.admin-customer-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.admin-customer-info > div:last-child {
+  min-width: 0;
+}
+
+.admin-customer-info strong {
+  display: block;
+  max-width: 220px;
+  overflow: hidden;
+  color: #1b2b21;
+  font-size: 0.87rem;
+  font-weight: 750;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.admin-customer-info span {
+  display: block;
+  max-width: 220px;
+  margin-top: 3px;
+  overflow: hidden;
+  color: #8a948d;
+  font-size: 0.74rem;
+  line-height: 1.3;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   CUSTOMER CONTACT
+   Matches:
+   .admin-customer-contact
+   ========================================================= */
+
+.admin-customer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 185px;
+}
+
+.admin-customer-contact span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #59675e;
+  font-size: 0.79rem;
+  white-space: nowrap;
+}
+
+.admin-customer-contact svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  color: #87928a;
+}
+
+/* =========================================================
+   COMPATIBILITY CLASSES
+   ========================================================= */
+
+.admin-customer-email {
+  color: #526057;
+  white-space: nowrap;
+}
+
+.admin-customer-secondary {
+  color: #68756c;
+  white-space: nowrap;
+}
+
+.admin-customer-date {
+  color: #6e7a71;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.admin-customer-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 67px;
+  justify-content: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.69rem;
+  font-weight: 750;
+  line-height: 1;
+}
+
+.admin-customer-status::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.admin-customer-status.active {
+  background: #edf8f0;
+  color: #277342;
+}
+
+.admin-customer-status.active::before {
+  background: #3c9a59;
+  box-shadow: 0 0 0 3px rgba(60, 154, 89, 0.09);
+}
+
+.admin-customer-status.inactive {
+  background: #fdf0f0;
+  color: #a94444;
+}
+
+.admin-customer-status.inactive::before {
+  background: #c95b5b;
+  box-shadow: 0 0 0 3px rgba(201, 91, 91, 0.09);
+}
+
+/* =========================================================
+   ACTIONS
+   ========================================================= */
+
+.admin-customer-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 7px;
+}
+
+.admin-customer-actions button,
+.admin-customer-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid #e0e6e0;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #66736a;
+  font-family: inherit;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.admin-customer-actions button:hover,
+.admin-customer-action:hover {
+  background: #f7f9f7;
+  border-color: #cbd5cc;
+  color: #26382c;
+  box-shadow: 0 4px 10px rgba(22, 45, 31, 0.05);
+}
+
+.admin-customer-actions button:active,
+.admin-customer-action:active {
+  transform: scale(0.95);
+}
+
+.admin-customer-actions button svg,
+.admin-customer-action svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* MESSAGE */
+
+.admin-customer-message,
+.admin-customer-action.message {
+  color: #806421 !important;
+}
+
+.admin-customer-message:hover,
+.admin-customer-action.message:hover {
+  border-color: #dbc68f !important;
+  background: #fffaf0 !important;
+  color: #8b691f !important;
+}
+
+/* DELETE */
+
+.admin-customer-delete,
+.admin-customer-action.delete {
+  color: #a05252 !important;
+}
+
+.admin-customer-delete:hover,
+.admin-customer-action.delete:hover {
+  border-color: #e4b8b8 !important;
+  background: #fff5f5 !important;
+  color: #b33c3c !important;
+}
+
+.admin-customer-delete:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.admin-customer-delete span {
+  margin-left: 2px;
+  font-size: 0.68rem;
+}
+
+/* =========================================================
+   LOADING STATE
+   ========================================================= */
+
+.admin-customers-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 360px;
+  padding: 50px 30px;
+  background: #ffffff;
+  border: 1px solid #e1e7e1;
+  border-radius: 17px;
+  text-align: center;
+  box-shadow:
+    0 12px 35px rgba(22, 45, 31, 0.04);
+}
+
+.admin-customers-state > svg {
+  width: 27px;
+  height: 27px;
+  margin-bottom: 14px;
+  color: #7d8b81;
+}
+
+.admin-customers-state h2 {
+  margin: 0;
+  color: #26362c;
+  font-size: 1rem;
+  font-weight: 750;
+}
+
+.admin-customers-state p {
+  max-width: 430px;
+  margin: 8px 0 0;
+  color: #89938c;
+  font-size: 0.83rem;
+  line-height: 1.65;
+}
+
+.admin-customers-spinner,
+.admin-customers-loading-spinner {
+  width: 34px;
+  height: 34px;
+  margin-bottom: 16px;
+  border: 3px solid #e6ebe6;
+  border-top-color: #b68a2c;
+  border-radius: 50%;
+  animation: adminCustomersSpin 0.8s linear infinite;
+}
+
+@keyframes adminCustomersSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   MESSAGE MODAL OVERLAY
+   ========================================================= */
+
+.admin-message-modal-overlay {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(15, 25, 19, 0.56);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  animation: adminCustomersOverlayIn 0.2s ease;
+}
+
+@keyframes adminCustomersOverlayIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* =========================================================
+   MESSAGE MODAL
+   ========================================================= */
+
+.admin-message-modal {
+  width: min(100%, 570px);
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  background: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 18px;
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.22),
+    0 8px 25px rgba(0, 0, 0, 0.08);
+  animation: adminCustomersModalIn 0.22s ease;
+}
+
+@keyframes adminCustomersModalIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =========================================================
+   MODAL HEADER
+   ========================================================= */
+
+.admin-message-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px 24px 20px;
+  border-bottom: 1px solid #edf0ed;
+  background:
+    linear-gradient(
+      135deg,
+      #fbfcfb 0%,
+      #f7faf7 100%
+    );
+}
+
+.admin-message-modal-header > div {
+  min-width: 0;
+}
+
+.admin-message-modal-header span {
+  display: block;
+  margin-bottom: 5px;
+  color: #9a7428;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.admin-message-modal-header h2 {
+  margin: 0;
+  overflow: hidden;
+  color: #17291e;
+  font-size: 1.18rem;
+  font-weight: 750;
+  line-height: 1.3;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.admin-message-modal-header p {
+  margin: 4px 0 0;
+  overflow: hidden;
+  color: #808b83;
+  font-size: 0.78rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.admin-message-modal-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 35px;
+  height: 35px;
+  padding: 0;
+  border: 1px solid #e0e6e0;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #66736a;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.admin-message-modal-close:hover {
+  border-color: #d1d9d2;
+  background: #f5f7f5;
+  color: #27382d;
+}
+
+.admin-message-modal-close:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.admin-message-modal-close svg {
+  width: 17px;
+  height: 17px;
+}
+
+/* =========================================================
+   MESSAGE FORM
+   ========================================================= */
+
+.admin-message-form {
+  padding: 24px;
+}
+
+.admin-message-form label {
+  display: block;
+  margin-bottom: 17px;
+  color: #445249;
+  font-size: 0.78rem;
+  font-weight: 750;
+}
+
+.admin-message-form input,
+.admin-message-form textarea {
+  display: block;
+  width: 100%;
+  margin-top: 7px;
+  border: 1px solid #dfe5df;
+  border-radius: 10px;
+  outline: none;
+  background: #fafbfa;
+  color: #1d2c22;
+  font-family: inherit;
+  font-size: 0.87rem;
+  box-sizing: border-box;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.admin-message-form input {
+  height: 44px;
+  padding: 0 13px;
+}
+
+.admin-message-form textarea {
+  min-height: 150px;
+  padding: 12px 13px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.admin-message-form input::placeholder,
+.admin-message-form textarea::placeholder {
+  color: #a0a9a2;
+}
+
+.admin-message-form input:focus,
+.admin-message-form textarea:focus {
+  border-color: #b68a2c;
+  background: #ffffff;
+  box-shadow:
+    0 0 0 3px rgba(182, 138, 44, 0.1);
+}
+
+.admin-message-form .admin-customers-alert {
+  margin-top: 4px;
+  margin-bottom: 17px;
+}
+
+/* =========================================================
+   MESSAGE FORM ACTIONS
+   ========================================================= */
+
+.admin-message-form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 9px;
+  padding-top: 3px;
+}
+
+.admin-message-cancel,
+.admin-message-send {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 40px;
+  padding: 0 15px;
+  border-radius: 9px;
+  font-family: inherit;
+  font-size: 0.79rem;
+  font-weight: 750;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.admin-message-cancel {
+  border: 1px solid #dfe5df;
+  background: #ffffff;
+  color: #59665d;
+}
+
+.admin-message-cancel:hover {
+  background: #f6f8f6;
+  border-color: #d1d9d2;
+}
+
+.admin-message-send {
+  border: 1px solid #1d4a30;
+  background: #1d4a30;
+  color: #ffffff;
+  box-shadow: 0 5px 14px rgba(29, 74, 48, 0.16);
+}
+
+.admin-message-send:hover {
+  border-color: #153b25;
+  background: #153b25;
+  transform: translateY(-1px);
+}
+
+.admin-message-send:active,
+.admin-message-cancel:active {
+  transform: translateY(0);
+}
+
+.admin-message-send:disabled,
+.admin-message-cancel:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.admin-message-send svg {
+  width: 15px;
+  height: 15px;
+}
+
+/* =========================================================
+   OLD / COMPATIBILITY EMPTY CLASSES
+   ========================================================= */
+
+.admin-customers-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+  padding: 40px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.admin-customers-empty-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  margin-bottom: 16px;
+  border-radius: 50%;
+  background: #f1f5f1;
+  color: #718077;
+}
+
+.admin-customers-empty-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.admin-customers-empty h3 {
+  margin: 0;
+  color: #26362c;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.admin-customers-empty p {
+  max-width: 420px;
+  margin: 7px 0 0;
+  color: #89938c;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   DELETE CONFIRMATION COMPATIBILITY
+   ========================================================= */
+
+.admin-customer-delete-confirm {
+  padding: 22px;
+  background: #ffffff;
+  border: 1px solid #eadede;
+  border-radius: 14px;
+  box-shadow: 0 15px 40px rgba(40, 25, 25, 0.08);
+}
+
+.admin-customer-delete-confirm h3 {
+  margin: 0;
+  color: #25342b;
+  font-size: 1rem;
+}
+
+.admin-customer-delete-confirm p {
+  margin: 8px 0 18px;
+  color: #748078;
+  font-size: 0.84rem;
+  line-height: 1.6;
+}
+
+.admin-customer-delete-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 9px;
+}
+
+.admin-customer-delete-cancel,
+.admin-customer-delete-submit {
+  min-height: 38px;
+  padding: 0 14px;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.admin-customer-delete-cancel {
+  border: 1px solid #dfe5df;
+  background: #ffffff;
+  color: #59665d;
+}
+
+.admin-customer-delete-cancel:hover {
+  background: #f6f8f6;
+}
+
+.admin-customer-delete-submit {
+  border: 1px solid #b84a4a;
+  background: #b84a4a;
+  color: #ffffff;
+}
+
+.admin-customer-delete-submit:hover {
+  border-color: #9f3d3d;
+  background: #9f3d3d;
+}
+
+/* =========================================================
+   RESPONSIVE — 1100px
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  .admin-customers-page {
+    padding: 27px;
+  }
+
+  .admin-customers-table {
+    min-width: 930px;
+  }
+
+  .admin-customers-table th,
+  .admin-customers-table td {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — 900px
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .admin-customers-page {
+    padding: 24px;
+  }
+
+  .admin-customers-header {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .admin-customers-count {
+    align-self: flex-start;
+  }
+
+  .admin-customers-table {
+    min-width: 900px;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — 700px
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .admin-customers-page {
+    padding: 20px 16px;
+  }
+
+  .admin-customers-header {
+    margin-bottom: 21px;
+  }
+
+  .admin-customers-header h1 {
+    font-size: 1.65rem;
+  }
+
+  .admin-customers-header p {
+    max-width: none;
+    font-size: 0.84rem;
+  }
+
+  .admin-customers-count {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .admin-customers-card,
+  .admin-customers-table-card {
+    border-radius: 13px;
+  }
+
+  .admin-customers-table {
+    min-width: 880px;
+  }
+
+  .admin-message-modal-overlay {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .admin-message-modal {
+    width: 100%;
+    max-height: 92vh;
+    border-radius: 18px 18px 0 0;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — 480px
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .admin-customers-page {
+    padding: 17px 12px;
+  }
+
+  .admin-customers-eyebrow {
+    font-size: 0.66rem;
+  }
+
+  .admin-customers-header h1 {
+    font-size: 1.48rem;
+  }
+
+  .admin-customers-header p {
+    font-size: 0.8rem;
+    line-height: 1.6;
+  }
+
+  .admin-customers-count {
+    padding: 12px 14px;
+  }
+
+  .admin-customers-table {
+    min-width: 850px;
+  }
+
+  .admin-customers-table th {
+    height: 48px;
+    font-size: 0.65rem;
+  }
+
+  .admin-customers-table td {
+    padding: 14px 12px;
+  }
+
+  .admin-customer-avatar {
+    width: 40px;
+    height: 40px;
+  }
+
+  .admin-customer-info {
+    gap: 10px;
+  }
+
+  .admin-message-modal-header {
+    padding: 20px 18px 17px;
+  }
+
+  .admin-message-form {
+    padding: 19px 18px;
+  }
+
+  .admin-message-form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .admin-message-cancel,
+  .admin-message-send {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+.admin-customers-page button:focus-visible,
+.admin-customers-page input:focus-visible,
+.admin-customers-page textarea:focus-visible {
+  outline: 2px solid rgba(182, 138, 44, 0.65);
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .admin-customers-page *,
+  .admin-customers-page *::before,
+  .admin-customers-page *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

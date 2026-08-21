@@ -1,0 +1,580 @@
+.admin-destinations {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   TOOLBAR
+   ========================================================= */
+
+.admin-destinations-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+
+  margin-bottom: 1.25rem;
+  padding: 0.85rem;
+
+  border: 1px solid #e2e7e1;
+  border-radius: 12px;
+
+  background: #fff;
+}
+
+.admin-search {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+
+  flex: 1;
+
+  min-width: 220px;
+
+  padding: 0 0.7rem;
+
+  border: 1px solid #e2e7e1;
+  border-radius: 8px;
+
+  color: #89928b;
+}
+
+.admin-search input {
+  width: 100%;
+
+  padding: 0.65rem 0;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+
+  color: #26332b;
+
+  font: inherit;
+  font-size: 0.78rem;
+}
+
+.admin-destinations-toolbar select {
+  padding: 0.65rem 0.75rem;
+
+  border: 1px solid #e2e7e1;
+  border-radius: 8px;
+
+  background: #fff;
+
+  color: #56635a;
+
+  font: inherit;
+  font-size: 0.75rem;
+
+  outline: none;
+}
+
+
+/* =========================================================
+   DESTINATION GRID
+   ========================================================= */
+
+.admin-destinations-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 1rem;
+}
+
+.admin-destination-card {
+  overflow: hidden;
+
+  border: 1px solid #e2e7e1;
+  border-radius: 14px;
+
+  background: #fff;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.admin-destination-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 30px rgba(23, 58, 43, 0.07);
+}
+
+
+/* =========================================================
+   IMAGE
+   ========================================================= */
+
+.admin-destination-image {
+  position: relative;
+
+  height: 190px;
+
+  overflow: hidden;
+
+  background: #edf1ed;
+}
+
+.admin-destination-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition: transform 0.35s ease;
+}
+
+.admin-destination-card:hover
+.admin-destination-image img {
+  transform: scale(1.035);
+}
+
+.admin-destination-badge {
+  position: absolute;
+
+  top: 0.75rem;
+  left: 0.75rem;
+
+  padding: 0.35rem 0.55rem;
+
+  border-radius: 6px;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  color: #53635a;
+
+  font-size: 0.62rem;
+  font-weight: 700;
+}
+
+.admin-destination-badge.admin-added {
+  background: #173a2b;
+  color: #fff;
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.admin-destination-content {
+  padding: 1rem;
+}
+
+.admin-destination-location {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+
+  margin-bottom: 0.35rem;
+
+  color: #7b857e;
+
+  font-size: 0.66rem;
+  font-weight: 600;
+}
+
+.admin-destination-location svg {
+  color: #63816d;
+}
+
+.admin-destination-content h2 {
+  margin: 0;
+
+  color: #17251d;
+
+  font-size: 1.05rem;
+  letter-spacing: -0.025em;
+}
+
+.admin-destination-content p {
+  margin: 0.6rem 0 1rem;
+
+  min-height: 62px;
+
+  color: #737c76;
+
+  font-size: 0.74rem;
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   ACTIONS
+   ========================================================= */
+
+.admin-destination-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  padding-top: 0.85rem;
+
+  border-top: 1px solid #edf0ec;
+}
+
+.admin-destination-actions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+
+  padding: 0.5rem 0.65rem;
+
+  border: 1px solid #e1e6e1;
+  border-radius: 7px;
+
+  background: #fff;
+
+  color: #59665e;
+
+  font: inherit;
+  font-size: 0.65rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.admin-destination-actions button:hover:not(:disabled) {
+  border-color: #cbd7cc;
+
+  background: #f5f8f5;
+
+  color: #294d37;
+}
+
+.admin-destination-actions button.delete:hover:not(:disabled) {
+  border-color: #efd1d1;
+
+  background: #fff6f6;
+
+  color: #b54848;
+}
+
+
+/* =========================================================
+   DISABLED HARD-CODED CONTROLS
+   ========================================================= */
+
+.admin-destination-actions button:disabled {
+  opacity: 0.35;
+
+  cursor: not-allowed;
+
+  background: #f7f8f7;
+
+  color: #8c948e;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.admin-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 260px;
+
+  padding: 2rem;
+
+  border: 1px dashed #d8dfd9;
+  border-radius: 14px;
+
+  background: #fafbf9;
+
+  text-align: center;
+}
+
+.admin-empty-state svg {
+  margin-bottom: 0.7rem;
+
+  color: #78907f;
+
+  font-size: 1.5rem;
+}
+
+.admin-empty-state h3 {
+  margin: 0;
+
+  color: #26332b;
+
+  font-size: 1rem;
+}
+
+.admin-empty-state p {
+  margin: 0.4rem 0 0;
+
+  color: #7b857e;
+
+  font-size: 0.75rem;
+}
+
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.admin-destination-modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1.5rem;
+
+  background: rgba(15, 27, 21, 0.52);
+
+  backdrop-filter: blur(4px);
+}
+
+.admin-destination-modal {
+  width: min(620px, 100%);
+
+  max-height: calc(100vh - 3rem);
+
+  overflow-y: auto;
+
+  border: 1px solid #e1e6e1;
+  border-radius: 16px;
+
+  background: #fff;
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================================================
+   MODAL HEADER
+   ========================================================= */
+
+.admin-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 1rem;
+
+  padding: 1.25rem 1.35rem;
+
+  border-bottom: 1px solid #edf0ec;
+}
+
+.admin-modal-header span {
+  display: block;
+
+  margin-bottom: 0.35rem;
+
+  color: #73806f;
+
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.admin-modal-header h2 {
+  margin: 0;
+
+  color: #17251d;
+
+  font-size: 1.25rem;
+}
+
+.admin-modal-header > button {
+  display: grid;
+  place-items: center;
+
+  width: 32px;
+  height: 32px;
+
+  border: 1px solid #e2e7e1;
+  border-radius: 8px;
+
+  background: #fff;
+
+  color: #68746c;
+
+  cursor: pointer;
+}
+
+.admin-modal-header > button:hover {
+  background: #f5f8f5;
+  color: #294d37;
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.admin-destination-modal form {
+  padding: 1.35rem;
+}
+
+.admin-form-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 0.9rem;
+}
+
+.admin-form-group {
+  margin-bottom: 1rem;
+}
+
+.admin-form-group label {
+  display: block;
+
+  margin-bottom: 0.4rem;
+
+  color: #45534a;
+
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.admin-form-group input,
+.admin-form-group textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 0.75rem 0.8rem;
+
+  border: 1px solid #dfe5df;
+  border-radius: 8px;
+
+  background: #fff;
+
+  color: #26332b;
+
+  font: inherit;
+  font-size: 0.76rem;
+
+  outline: none;
+
+  transition: 0.2s ease;
+}
+
+.admin-form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.admin-form-group input:focus,
+.admin-form-group textarea:focus {
+  border-color: #70917b;
+
+  box-shadow:
+    0 0 0 3px rgba(112, 145, 123, 0.1);
+}
+
+
+/* =========================================================
+   MODAL ACTIONS
+   ========================================================= */
+
+.admin-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.6rem;
+
+  padding-top: 0.5rem;
+}
+
+.admin-modal-actions button {
+  padding: 0.7rem 1rem;
+
+  border-radius: 8px;
+
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.admin-modal-cancel {
+  border: 1px solid #dfe5df;
+
+  background: #fff;
+
+  color: #5d6961;
+}
+
+.admin-modal-cancel:hover {
+  background: #f6f8f6;
+}
+
+.admin-modal-save {
+  border: 1px solid #173a2b;
+
+  background: #173a2b;
+
+  color: #fff;
+}
+
+.admin-modal-save:hover {
+  background: #24523d;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  .admin-destinations-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .admin-page-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .admin-destinations-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .admin-search {
+    min-width: 0;
+  }
+
+  .admin-destinations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-destination-actions {
+    flex-wrap: wrap;
+  }
+}
