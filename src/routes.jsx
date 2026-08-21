@@ -18,6 +18,13 @@ import Contact from "./pages/Contact/Contact";
 import Gallery from "./pages/Gallery/Gallery";
 
 // =========================================================
+// LEGAL / INFORMATIONAL PAGES
+// =========================================================
+
+import Terms from "./pages/Terms/Terms";
+import Privacy from "./pages/Privacy/Privacy";
+
+// =========================================================
 // BLOG
 // =========================================================
 
@@ -41,6 +48,7 @@ import CustomerBookings from "./pages/Customer/Bookings";
 import CustomerProfile from "./pages/Customer/Profile";
 
 import AdminCustomers from "./admin/pages/AdminCustomers/AdminCustomers";
+
 // =========================================================
 // PAYMENTS
 // =========================================================
@@ -62,6 +70,7 @@ import AdminTours from "./admin/pages/AdminTours";
 import AdminDestinations from "./admin/pages/AdminDestinations";
 import AdminBookings from "./admin/pages/AdminBookings";
 import AdminMessages from "./admin/pages/AdminMessages/AdminMessages";
+
 // =========================================================
 // 404
 // =========================================================
@@ -145,6 +154,25 @@ function AppRoutes() {
         path="/gallery"
         element={<Gallery />}
       />
+
+      {/* =====================================================
+          TERMS & CONDITIONS
+          -----------------------------------------------------
+          Public legal page.
+
+          URL:
+          /terms
+      ===================================================== */}
+
+      <Route
+        path="/terms"
+        element={<Terms />}
+      />
+
+      <Route
+  path="/privacy"
+  element={<Privacy />}
+/>
 
       {/* =====================================================
           BLOG
@@ -281,10 +309,6 @@ function AppRoutes() {
 
               URL:
               /admin/destinations
-
-              IMPORTANT:
-              This MUST be "destinations", NOT
-              "/destinations".
           ================================================= */}
 
           <Route
@@ -312,9 +336,9 @@ function AppRoutes() {
           ================================================= */}
 
           <Route
-  path="customers"
-  element={<AdminCustomers />}
-/>
+            path="customers"
+            element={<AdminCustomers />}
+          />
 
           {/* =================================================
               ADMIN MESSAGES
@@ -324,9 +348,9 @@ function AppRoutes() {
           ================================================= */}
 
           <Route
-  path="messages"
-  element={<AdminMessages />}
-/>
+            path="messages"
+            element={<AdminMessages />}
+          />
 
           {/* =================================================
               ADMIN GALLERY
@@ -352,9 +376,9 @@ function AppRoutes() {
           ================================================= */}
 
           <Route
-  path="blog"
-  element={<AdminBlog />}
-/>
+            path="blog"
+            element={<AdminBlog />}
+          />
 
           {/* =================================================
               ADMIN SETTINGS
