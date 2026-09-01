@@ -47,7 +47,7 @@ ${form.message}`
     );
 
     window.open(
-      `https://wa.me/254111565424?text=${whatsappMessage}`,
+      `https://wa.me/254101820500?text=${whatsappMessage}`,
       "_blank"
     );
 
@@ -123,7 +123,7 @@ ${form.message}`
               <div className="contact-details">
 
                 <a
-                  href="mailto:info@jnitours.com"
+                  href="mailto:jni.tours.org@gmail.com"
                   className="contact-detail"
                 >
                   <span className="contact-detail-icon">
@@ -133,7 +133,7 @@ ${form.message}`
                   <div>
                     <small>Email us</small>
                     <strong>
-                      info@jnitours.com
+                      jni.tours.org@gmail.com
                     </strong>
                   </div>
                 </a>
@@ -189,7 +189,7 @@ ${form.message}`
               {/* WHATSAPP */}
 
               <a
-  href="https://wa.me/254111565424"
+  href="https://wa.me/254101820500"
   target="_blank"
   rel="noopener noreferrer"
   className="contact-whatsapp"
