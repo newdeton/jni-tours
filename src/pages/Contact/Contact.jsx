@@ -140,7 +140,7 @@ ${form.message}`
 
 
                 <a
-                  href="tel:+254702551560"
+                  href="tel:+254101820500"
                   className="contact-detail"
                 >
                   <span className="contact-detail-icon">
@@ -150,7 +150,7 @@ ${form.message}`
                   <div>
                     <small>Call us</small>
                     <strong>
-                      +254 702 551 560
+                      +254 10 182 0500
                     </strong>
                   </div>
                 </a>
