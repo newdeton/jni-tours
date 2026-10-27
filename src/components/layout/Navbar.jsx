@@ -41,8 +41,8 @@ function Navbar() {
 
           {/* Brand Text */}
           <span className="navbar-logo-text">
-            <span className="navbar-logo-main">JNI</span>
-            <span className="navbar-logo-sub">TOURS</span>
+            <span className="navbar-logo-main">Esto</span>
+            <span className="navbar-logo-sub">Safaris</span>
           </span>
         </Link>
 
