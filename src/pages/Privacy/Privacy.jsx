@@ -22,7 +22,7 @@ function Privacy() {
           </p>
 
           <div className="privacy-updated">
-            Last updated: August 21, 2026
+            Last updated: May 21, 2026
           </div>
         </div>
       </section>
@@ -795,17 +795,30 @@ function Privacy() {
                 provided on our website.
               </p>
 
-              <div className="privacy-contact-card">
-                <strong>JNI TOURS</strong>
+              
+<div className="privacy-contact-card">
+  <strong>JNI TOURS</strong>
 
-                <span>
-                  Travel. Explore. Experience.
-                </span>
+  <span>
+    For questions about this Privacy Policy, the personal information
+    we collect, the purposes for which it is used, how it is protected,
+    or requests concerning your privacy rights, you can contact our
+    team through the official communication channels listed below.
+    We will review privacy-related enquiries and respond as reasonably
+    practicable, subject to any verification that may be necessary.
+  </span>
 
-                <a href="/contact">
-                  Contact our team
-                </a>
-              </div>
+  <span>Email: estosafaris@gmail.com</span>
+
+  <span>Telephone / WhatsApp: +254 101 820 500</span>
+
+  <span>Business Address: Thika Road, Nairobi, Kenya</span>
+
+  <a href="/contact">
+    Contact our team
+  </a>
+</div>
+
             </section>
 
             {/* =================================================
@@ -820,7 +833,7 @@ function Privacy() {
               </strong>
 
               <span>
-                Last updated: August 21, 2026
+                Last updated: May 21, 2026
               </span>
             </div>
 

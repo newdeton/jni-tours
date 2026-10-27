@@ -65,8 +65,8 @@ function Footer() {
             <div className="footer-brand">
 
               <Link to="/" className="footer-logo">
-                <span>JNI</span>
-                <small>TOURS</small>
+                <span>Esto</span>
+                <small>Safaris.jnitours</small>
               </Link>
 
               <p>
@@ -152,7 +152,7 @@ function Footer() {
 
             <div className="footer-column">
 
-              <h3>JNI Tours</h3>
+              <h3>Esto Safaris.jnitours</h3>
 
               <Link to="/about">
                 <span>Our Story</span>
@@ -221,24 +221,35 @@ function Footer() {
                 </span>
               </a>
 
-              <a href="tel:+254702551560">
+              <a href="tel:+254708031319">
                 <span className="footer-contact-icon">
                   <FiPhone />
                 </span>
 
                 <span>
-                  +254 702 551 560
+                  +254 708 031 319
                   <small>Call us</small>
                 </span>
               </a>
 
-              <a href="mailto:hello@jnitours.com">
+              <a href="tel:+254101820500">
+                <span className="footer-contact-icon">
+                  <FiPhone />
+                </span>
+
+                <span>
+                  +254101820500
+                  <small>Call us</small>
+                </span>
+              </a>
+
+              <a href="mailto:estosafaris@gmail.com">
                 <span className="footer-contact-icon">
                   <FiMail />
                 </span>
 
                 <span>
-                  hello@jnitours.com
+                  estosafaris@gmail.com
                   <small>Email us</small>
                 </span>
               </a>
@@ -258,7 +269,7 @@ function Footer() {
         <div className="container footer-bottom-inner">
 
           <p>
-            © {currentYear} JNI Tours.
+            © {currentYear} Estosafaris.jnitours.
             <span> Crafted for unforgettable journeys.</span>
           </p>
 

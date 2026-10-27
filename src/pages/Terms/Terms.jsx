@@ -19,7 +19,7 @@ function Terms() {
           </p>
 
           <div className="terms-updated">
-            Last updated: August 21, 2026
+            Last updated: May 21, 2026
           </div>
         </div>
       </section>
@@ -104,9 +104,9 @@ function Terms() {
               <h2>Terms & Conditions</h2>
 
               <div className="terms-meta">
-                <strong>Effective Date:</strong> August 21, 2026
+                <strong>Effective Date:</strong> May 21, 2026
                 <br />
-                <strong>Last Updated:</strong> August 21, 2026
+                <strong>Last Updated:</strong> May 21, 2026
               </div>
 
               <p>
@@ -635,81 +635,174 @@ function Terms() {
               </p>
             </section>
 
-            {/* =================================================
-                13 — CUSTOMER CANCELLATIONS
-            ================================================= */}
+            
+{/* =================================================
+    13 — CUSTOMER CANCELLATIONS
+================================================= */}
 
-            <section id="customer-cancellations">
-              <span className="terms-section-number">13</span>
+<section id="customer-cancellations">
+  <span className="terms-section-number">13</span>
 
-              <h2>Cancellations by the Customer</h2>
+  <h2>Cancellations by the Customer</h2>
 
-              <p>Cancellation rights depend on:</p>
+  <p>
+    We understand that travel plans can change because of personal
+    circumstances, scheduling conflicts, health concerns or other
+    unexpected events. Customers who wish to cancel a booking should
+    notify JNI Tours in writing as soon as reasonably possible using
+    our official email address or another communication channel
+    provided by our team. A cancellation request should include the
+    customer's full name, booking reference, scheduled travel date
+    and a clear statement that the customer wishes to cancel the
+    relevant booking.
+  </p>
 
-              <ul>
-                <li>The date cancellation is requested;</li>
-                <li>The type of booking;</li>
-                <li>The services purchased;</li>
-                <li>Supplier cancellation conditions;</li>
-                <li>Amounts already paid;</li>
-                <li>Whether services have already been delivered; and</li>
-                <li>The specific cancellation conditions communicated with the booking.</li>
-              </ul>
+  <p>
+    Unless different cancellation terms have been clearly disclosed
+    and agreed to for a particular booking, the following general
+    cancellation schedule will apply to the cancellation charges
+    retained by JNI Tours. The cancellation period is calculated
+    using the scheduled departure date, and the applicable charge
+    is based on the amount paid for the affected tour or service,
+    subject to the exclusions and supplier charges described below.
+  </p>
 
-              <p>
-                Customers should review their booking-specific cancellation
-                conditions before making payment.
-              </p>
+  <ul>
+    <li>
+      <strong>30 days or more before departure:</strong> Customers
+      may qualify for a refund of amounts paid, less any disclosed,
+      non-recoverable costs or supplier charges already incurred
+      specifically for their booking.
+    </li>
+    <li>
+      <strong>15 to 29 days before departure:</strong> A cancellation
+      charge of up to 50% of the affected tour or service price may
+      apply, together with any applicable non-recoverable third-party
+      costs that were disclosed or apply under the booking conditions.
+    </li>
+    <li>
+      <strong>7 to 14 days before departure:</strong> A cancellation
+      charge of up to 75% of the affected tour or service price may
+      apply, together with any applicable non-recoverable supplier
+      costs.
+    </li>
+    <li>
+      <strong>6 days or fewer before departure, or failure to arrive:</strong>
+      The booking may be non-refundable where the services, reservations
+      or supplier commitments can no longer reasonably be cancelled
+      or recovered. Any refund will depend on the applicable booking
+      terms and amounts that can actually be recovered.
+    </li>
+  </ul>
 
-              <p>
-                Cancellation requests should be submitted through an official
-                JNI Tours communication channel.
-              </p>
+  <p>
+    These time periods are intended as a general policy. Certain
+    flights, accommodation reservations, park permits, transport
+    arrangements, event tickets, special offers and third-party
+    activities may have stricter cancellation rules or may be
+    non-refundable from the time they are confirmed. Where such
+    conditions apply, JNI Tours will communicate the relevant
+    booking-specific terms before payment or confirmation, and those
+    terms will apply to the extent they were properly disclosed and
+    agreed to.
+  </p>
 
-              <p>
-                The effective cancellation date may be the date on which JNI
-                Tours receives the cancellation request.
-              </p>
-            </section>
+  <p>
+    A booking will not be considered cancelled merely because a
+    customer has stopped communicating, failed to make a scheduled
+    payment or decided not to travel. Customers should obtain
+    confirmation that their cancellation request has been received.
+    Where reasonably possible, the effective cancellation date will
+    be the date JNI Tours receives the request through an official
+    communication channel.
+  </p>
+</section>
 
-            {/* =================================================
-                14 — REFUNDS
-            ================================================= */}
+{/* =================================================
+    14 — REFUNDS
+================================================= */}
 
-            <section id="refunds">
-              <span className="terms-section-number">14</span>
+<section id="refunds">
+  <span className="terms-section-number">14</span>
 
-              <h2>Refunds</h2>
+  <h2>Refunds</h2>
 
-              <p>
-                Where a refund is applicable, JNI Tours will communicate the
-                amount and applicable processing procedure.
-              </p>
+  <p>
+    Refunds are assessed according to the cancellation terms
+    applicable to the booking, the services purchased, the amount
+    paid, the timing of the cancellation and any amounts that JNI
+    Tours or its suppliers are entitled to retain. When a refund
+    is approved, JNI Tours will explain the amount to be returned
+    and, where applicable, identify deductions relating to disclosed
+    cancellation charges, non-recoverable supplier expenses or
+    payment-processing costs that cannot reasonably be recovered.
+  </p>
 
-              <p>Refunds may be subject to:</p>
+  <p>
+    Refunds may be reduced where permitted by the applicable booking
+    terms by charges for accommodation, transportation, activities,
+    permits, reservations, supplier cancellation penalties, bank
+    charges, currency conversion differences or payment-processing
+    fees. JNI Tours will not treat an amount as a cancellation
+    deduction simply because it is convenient to do so; deductions
+    should relate to applicable booking conditions, actual
+    non-recoverable costs or other charges properly disclosed to
+    the customer.
+  </p>
 
-              <ul>
-                <li>Supplier cancellation penalties;</li>
-                <li>Non-refundable accommodation charges;</li>
-                <li>Transportation cancellation charges;</li>
-                <li>Activity cancellation charges;</li>
-                <li>Payment-processing fees;</li>
-                <li>Bank charges;</li>
-                <li>Currency conversion differences; and</li>
-                <li>Other charges expressly disclosed or permitted under the booking conditions.</li>
-              </ul>
+  <p>
+    Where a refund depends on money being returned by an airline,
+    accommodation provider, transport operator, activity provider
+    or another third-party supplier, processing may take longer
+    while the supplier reviews or returns the relevant funds. JNI
+    Tours will communicate material delays where reasonably
+    practicable and will process the customer's eligible refund
+    after the applicable amount has been established and the
+    necessary funds or confirmation have been received.
+  </p>
 
-              <p>
-                Where JNI Tours has not yet received a refund from an applicable
-                supplier, processing of the customer's corresponding refund
-                may depend on receipt of those funds.
-              </p>
+  <p>
+    Approved refunds will normally be returned through the original
+    payment method where that method supports refunds and its use
+    is reasonably practicable. If the original payment method is
+    unavailable, has expired or cannot receive the refund, JNI Tours
+    may request reasonable information to arrange an appropriate
+    alternative method, subject to payment-provider requirements
+    and verification procedures.
+  </p>
 
-              <p>
-                Refunds will generally be made using the original payment
-                method where reasonably possible.
-              </p>
-            </section>
+  <p>
+    As a general processing target, JNI Tours aims to initiate an
+    approved refund within 7 to 14 business days after the refund
+    amount and eligibility have been confirmed and any required
+    supplier funds have been received. This is an estimated
+    processing period, not a guarantee of when funds will appear
+    in the customer's account, because banks, card issuers and
+    payment providers may require additional time.
+  </p>
+
+  <p>
+    If JNI Tours cancels a confirmed service and cannot provide a
+    reasonable alternative that the customer accepts, the customer
+    will be offered a refund of the amount paid for the affected
+    service that was not delivered, subject to applicable law and
+    any valid, disclosed third-party arrangements. Refunds do not
+    automatically include unrelated expenses such as visas,
+    insurance, independently purchased flights or personal costs
+    unless required by law or expressly agreed in writing.
+  </p>
+
+  <p>
+    Customers who believe that a refund has been calculated
+    incorrectly should contact JNI Tours at estosafaris@gmail.com
+    and provide their booking reference, payment confirmation and
+    a brief explanation of the concern. We will review the
+    information, explain the basis of our decision and correct
+    any confirmed error in accordance with the applicable booking
+    terms and relevant law.
+  </p>
+</section>
+
 
             {/* =================================================
                 15 — CUSTOMER CHANGES
@@ -1560,7 +1653,7 @@ function Terms() {
               <h2>Complaints</h2>
 
               <p>
-                Customers should notify JNI Tours or the relevant service
+                Customers should notify estosafaris.jni or the relevant service
                 provider as soon as reasonably possible if they experience a
                 problem during their trip.
               </p>
@@ -1737,13 +1830,13 @@ function Terms() {
 
                 <span>Kenya</span>
 
-                <span>Email: [Insert Official Email]</span>
+                <span>Email: estosafaris@gmail.com</span>
 
-                <span>Telephone: [Insert Official Phone Number]</span>
+                <span>Telephone: +254101820500</span>
 
-                <span>Website: [Insert Website]</span>
+                <span>Website: jni-tours.estosafaridreams.com</span>
 
-                <span>Physical Address: [Insert Business Address]</span>
+                <span>Physical Address: Along Thika Road, Nairobi, Kenya</span>
 
                 <span>Travel. Explore. Experience.</span>
 
@@ -1761,7 +1854,7 @@ function Terms() {
                 and agreed to these Terms & Conditions.
               </strong>
 
-              <span>Last Updated: August 21, 2026</span>
+              <span>Last Updated: May 21, 2026</span>
             </div>
           </article>
         </div>

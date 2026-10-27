@@ -138,6 +138,19 @@ ${form.message}`
                   </div>
                 </a>
 
+                <a
+                  href="mailto:estosafaris@gmail.com"
+                  className="contact-detail"
+                >
+                  <div>
+                    <small>Email us</small>
+                    <strong>
+                      estosafaris@gmail.com
+                    </strong>
+                  </div>
+
+                </a>
+
 
                 <a
                   href="tel:+254101820500"
